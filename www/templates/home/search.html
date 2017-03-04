@@ -1,0 +1,29 @@
+<ion-view class="searchservices">
+   <div class="bar bar-header search-services-header" >
+      <a class="pdl5" ng-click="home()"><img class="imgiconall" src="img/home/nleft.png"></a>
+      <label class="item item-input search-input ">
+         <i  class="input-icons icon ion-ios-search placeholder-icon"></i>
+         <input  type="text" placeholder="Search Salons" ng-model="searchQuery"/>
+         <button class="button button-clear button-dark input-icons">
+         X
+         </button>
+      </label>
+   </div>
+   <ion-content>
+      <ion-list class="servicelist" ng-show="vendorNames">
+               <ion-item ng-repeat="vendor in vendorNames|filter:searchQuery | limitTo: 10 track by $index"
+                         class="vendorservicelist" ng-click="vendorMenu(vendor.vid)"
+                         ng-if="vendor.vid!='version'">
+                  {{vendor.vName}}
+                  <div class="vendororservice" >
+                     vendor
+                  </div>
+               </ion-item>
+      </ion-list>
+      <ion-list class="servicelist" ng-hide="vendorNames">
+         <ion-item class="vendorservicelist">
+           No, results yet!
+         </ion-item>
+      </ion-list>
+   </ion-content>
+</ion-view>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="lib/ion-floating-menu/ion-floating-menu.css" rel="stylesheet" type="text/css"/>
+    <link href="lib/Croppie/croppie.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css" />
+
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- JQuery -->
+    <script src="lib/jquery/dist/jquery.min.js"></script>
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="lib/ngCordova/dist/ng-cordova.min.js"></script>
+    <script src="cordova.js"></script>
+
+    <script type="text/javascript" src="lib/Jdenticon/dist/jdenticon.min.js"></script>
+    <script src="lib/js-md5/build/md5.min.js"></script>
+    <script src="lib/ion-floating-menu/ion-floating-menu.js" type="text/javascript"></script>
+    <script src="lib/Croppie/croppie.js" type="text/javascript"></script>
+
+    <!-- firebase includes -->
+    <script src="lib/firebase/firebase.js"></script>
+    <script src="lib/angularfire/dist/angularfire.min.js"></script>
+    <script src="lib/underscore.js"></script>
+    <script>
+      // Initialize Firebase
+
+      var config = {
+        apiKey: "AIzaSyBaxFFUGviUNUMk8q7tsAV1nNkNeySGNbI",
+        authDomain: "fab2u-d2cb8.firebaseapp.com",
+        databaseURL: "https://fab2u-d2cb8.firebaseio.com",
+        storageBucket: "fab2u-d2cb8.appspot.com",
+        messagingSenderId: "312123112357"
+      };
+
+//      var config = {
+//              apiKey: "AIzaSyDgn5IGWKBhBj5n1GFY6JJWftUa_3WqXyc",
+//              authDomain: "fab2u-test-2cf67.firebaseapp.com",
+//              databaseURL: "https://fab2u-test-2cf67.firebaseio.com",
+//              storageBucket: "",
+//              messagingSenderId: "62697514263"
+//      };
+
+      firebase.initializeApp(config);
+    </script>
+
+    <!--google maps-->
+
+
+    <script type = "text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+
+
+    <script src="http://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
+
+
+
+    <!-- <script type="text/javascript" src="http://google-maps-utility-library-v3.googlecode.com/svn/tags/markerclusterer/1.0/src/markerclusterer.js"></script> -->
+
+    <script type="text/javascript" src="lib/trunk8/trunk8.js"></script>
+
+    <!-- app's js -->
+    <script src="js/app.js"></script>
+    <script src="js/config.js"></script>
+    <!-- Controllers -->
+    <script src="js/controller/app/app-landing.ctrl.js"></script>
+
+    <script src="js/directives/ellipsis.directive.js"></script>
+    <script src="js/directives/feedDirective.js"></script>
+    <script src="js/directives/feedUpload.js"></script>
+    <script src="js/controller/auth/authentication.service.js"></script>
+    <script src="js/controller/auth/intro-slider-ctrl.js"></script>
+    <script src="js/controller/auth/login-ctrl.js"></script>
+    <script src="js/controller/auth/signup-ctrl.js"></script>
+    <script src="js/controller/auth/interestCtrl.js"></script>
+
+    <script src="js/controller/home/app-ctrl.js"></script>
+    <script src="js/controller/home/home-ctrl.js"></script>
+    <script src="js/controller/home/search-ctrl.js"></script>
+    <script src="js/controller/home/location-ctrl.js"></script>
+    <script src="js/controller/home/favourite-ctrl.js"></script>
+    <script src="js/controller/home/service-list-ctrl.js"></script>
+
+    <script src="js/controller/vendor/vendor-details-ctrl.js"></script>
+    <script src="js/controller/vendor/vendor-list-ctrl.js"></script>
+    <script src="js/controller/vendor/multipleMapCtrl.js"></script>
+    <script src="js/controller/vendor/map-ctrl.js"></script>
+    <script src="js/controller/vendor/vendor-menu.js"></script>
+    <script src="js/controller/vendor/vendor-selected-ctrl.js"></script>
+    <script src="js/controller/user/referral-details-ctrl.js"></script>
+    <script src="js/controller/user/refer-ctrl.js"></script>
+    <script src="js/controller/user/bookings-ctrl.js"></script>
+    <script src="js/controller/user/user-wallet-ctrl.js"></script>
+    <script src="js/controller/user/profile-ctrl.js"></script>
+    <script src="js/controller/user/booking-detail-ctrl.js"></script>
+
+    <script src="js/controller/checkout/date-time-ctrl.js"></script>
+    <script src="js/controller/checkout/cart-ctrl.js"></script>
+    <script src="js/controller/checkout/confirmation-ctrl.js"></script>
+    <script src="js/controller/checkout/bill-ctrl.js"></script>
+
+    <script src="js/controller/feed/feed-ctrl.js"></script>
+    <script src="js/controller/feed/tag-feed-ctrl.js"></script>
+    <script src="js/controller/feed/new-feed-ctrl.js"></script>
+    <script src="js/controller/feed/user-feed-ctrl.js"></script>
+    <script src="js/controller/feed/nearme-feed-ctrl.js"></script>
+    <script src="js/controller/feed/follow-ctrl.js"></script>
+    <script src="js/controller/feed/follow-post-ctrl.js"></script>
+    <script src="js/controller/feed/follower-ctrl.js"></script>
+    <script src="js/controller/feed/usersFeedCtrl.js"></script>
+
+    <script src="js/controller/legal/contact-ctrl.js"></script>
+    <script src="js/controller/general/updateAppCtrl.js"></script>
+    <script src="js/controller/general/appUnderConstructionCtrl.js"></script>
+
+    <script src="js/directives/ratings.js"></script>
+    <script src="js/directives/expandingText.js"></script>
+    <script src="js/directives/imageUpload.js"></script>
+
+    <script src="js/services/vendor/allVendorService.js"></script>
+    <script src="js/services/home/allServiceList.js"></script>
+    <script src="js/services/home/homeServices.js"></script>
+    <script src="js/services/home/favouriteVendorsService.js"></script>
+    <script src="js/services/home/locationService.js"></script>
+    <script src="js/services/auth/signUpService.js"></script>
+    <script src="js/services/auth/backServices.js"></script>
+    <script src="js/services/feed/UserInformation.js"></script>
+    <script src="js/services/user/userServices.js"></script>
+
+  </head>
+  <body ng-app="Fab2u">
+      <ion-nav-view>
+      </ion-nav-view>
+  </body>
+</html>

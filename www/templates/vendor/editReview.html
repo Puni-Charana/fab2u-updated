@@ -1,0 +1,22 @@
+<ion-modal-view class="modal-view rating_view" cache-view="false">
+    <ion-header-bar class="rating_view_bg">
+        <h1 class="title modal-title">Rate Now</h1>
+        <div>
+            <i class="icon ion-close close_icon" ng-click="close_edit_modal()"></i>
+        </div>
+    </ion-header-bar>
+    <ion-content class="padding">
+        <div class="card padding" id="rateNow">
+            <div class="padding">
+                <ionic-ratings ratingsobj='ratingsObject'></ionic-ratings>
+            </div>
+            <h4>Edit your review</h4>
+            <label class="item item-input">
+                <textarea rows="4" cols="50" name="customerReview" ng-model="custReview.review"></textarea>
+            </label>
+            <button class="button button-block button-dark" ng-click="storeEditReview(editData);">
+                SUBMIT
+            </button>
+        </div>
+    </ion-content>
+</ion-modal-view>

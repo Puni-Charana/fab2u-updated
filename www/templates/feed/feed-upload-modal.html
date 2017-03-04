@@ -1,0 +1,20 @@
+<ion-modal-view>
+    <ion-header-bar>
+        <h1 class="title">Feed Upload</h1>
+        <button style="color: #000;" class="button button-icon icon ion-close" ng-click="closeFeedModal()"></button>
+    </ion-header-bar>
+    <ion-content style="width: 100%; text-align:center;">
+        <div style="width: 80%; margin: 0 auto;">
+            <img style="width: 100%; max-width: 500px;" ng-src="{{base64ImageData}}">
+            <div class="list">
+                <label class="item item-input">
+                    <textarea ng-model="feed.description" rows="4" placeholder="Add description & #tags"></textarea>
+                </label>
+                <label class="item item-input">
+                    <input ng-model="feed.link" type="text" placeholder="Enter a link to your blog (Optional)">
+                </label>
+            </div>
+            <button ng-disabled="!feed.description" ng-click="compressImage()" class="button button-block button-positive">Upload</button>
+        </div>
+    </ion-content>
+</ion-modal-view>

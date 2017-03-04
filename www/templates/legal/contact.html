@@ -1,0 +1,45 @@
+<ion-view>
+    <ion-header-bar align-title="center" class="bar-light">
+        <div class="buttons">
+            <a class="pdl5" ui-sref="app.home"><img class="imgiconall" src="img/home/nleft.png"></a>
+        </div>
+        <h2 class="title">Contact Us</h2>
+    </ion-header-bar>
+    <ion-content>
+        <h4 class="padding-left">For any queries,send us a message.</h4>
+        <form name="contactForm">
+            <div class="list list-inset">
+                <label class="item item-input">
+                    <input type="text" placeholder="Name" ng-model="user.name" required>
+                </label>
+                <label class="item item-input">
+                    <input type="tel" maxlength="10" pattern="[0-9]{10}" placeholder="Mobile Number" ng-model="user.mobile" required>
+                </label>
+                <label class="item item-input item-select">
+                    <div class="input-label">
+                        Select City
+                    </div>
+                    <select ng-model="user.city" required>
+                        <option value="" selected disabled>Select</option>
+                        <option ng-repeat="item in cityList">{{item.cityName}}</option>
+                    </select>
+                </label>
+                <label class="item item-input item-select">
+                    <div class="input-label">
+                        Query Type
+                    </div>
+                    <select ng-model="user.queryType" required>
+                        <option value="" selected disabled>Select</option>
+                        <option ng-repeat="item in query_options">{{item}}</option>
+                    </select>
+                </label>
+                <label class="item item-input message_position">
+                    <textarea placeholder="Message" row="7" cols="50" ng-model="user.message" required></textarea>
+                </label>
+                <button class="button button-block button_color" ng-click="submit_query()" ng-disabled="contactForm.$invalid">
+                    SUBMIT
+                </button>
+            </div>
+        </form>
+    </ion-content>
+</ion-view>

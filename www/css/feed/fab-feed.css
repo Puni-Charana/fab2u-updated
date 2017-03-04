@@ -1,0 +1,108 @@
+.mgt1 {
+    margin-top: 10px;
+}
+
+.bg-fa {
+    background-color: #fafafa;
+}
+
+.ft-b {
+    font-size: 24px ! important;
+}
+
+.fd-img {
+    float: left;
+    text-align: left;
+    width: 60px;
+    display: block;
+    padding: 5px 0px 0 15px;
+}
+
+.fd-img img {
+    float: left;
+    width: 40px;
+    height: 40px;
+}
+
+.pdl5 {
+    padding-left: 5px !important
+}
+
+.pdl10 {
+    padding-left: 10px !important
+}
+
+.mg-5 {
+    margin-right: 5px;
+}
+
+.pdrt10 {
+    padding-right: 10px ! important;
+}
+
+.alinkfix {
+    width: 40px !important;
+    padding-left: 10px !important;
+    color: #757575;
+    margin-right: 10%;
+    font-size: 32px !important;
+    display: inline-block !important;
+}
+
+.alinkfix-right {
+    width: 77px !important;
+    padding-right: 10px !important;
+    color: #757575;
+    float: right !important;
+    font-size: 32px !important;
+    display: block !important;
+    text-align: right !important;
+}
+
+.mgtn2 {
+    margin-top: -15px ! important;
+}
+
+.pdtnone {
+    padding-top: 0px ! important;
+}
+
+.mgn {
+    margin-top: -2px ! important;
+}
+
+.t-active {
+    color: #f68589 ! important;
+}
+
+.p-name {
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #777;
+}
+
+.editcs {
+    border-radius: 50%;
+    border: solid 1px #999;
+    margin-top: 20px;
+    width: 30px;
+    height: 30px;
+    float: right;
+    display: block;
+    font-size: 15px;
+    color: #999;
+    text-align: center;
+    line-height: 28px;
+}
+
+.userprofile-img { display: block; width: 100%; border-radius: 50%; text-align: center;}
+.userprofile-img img { width: 100px; height: 100px; border-radius: 50%; text-align: center; overflow: hidden;}
+.pdtmn{padding-top: 0px; padding-bottom: 0px;}
+.user-c-g .box{width: 100%; position: relative; height: 30px; margin-top: -5px; text-align: left;}
+.user-c-g .box .col{width: auto; position: relative; display: inline-block; float: left; text-align: left;}
+
+
+@media (max-width: 400px){
+.userprofile-img img { width: 80px; height: 80px;}
+    
+}

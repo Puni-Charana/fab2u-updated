@@ -1,0 +1,352 @@
+/*------------------------------------------*/
+.fabFeed.transparent {
+  background: transparent !important;
+}
+.fabFeed .list_item span{
+float:right;
+}
+
+.fabFeed .image-modal .fullscreen-image {
+	display: block;
+	max-width: 100% !important;
+	max-height: 90% !important;
+    height: AUTO !important;
+    width: auto !important;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    overflow: auto;
+    position: fixed;
+    right: 0;
+    top: 0;
+}
+
+.fab-book-header-img{
+	width:20px;
+	height:20px;
+	margin: 5px 0 0;
+}
+
+.fabFeed .feeds .row:nth-child(1){
+	padding:20px 0 0;
+
+}
+
+.fabFeed .feeds .row .col-55{
+	padding-bottom:0px;
+
+}
+
+.fabFeed .ion-ios-home:before{
+	font-size: 26px !important;
+    line-height: 26px !important;
+}
+
+.follow-wrap{
+	text-align: center;
+}
+.feed-city{
+	color:#777;
+	margin:0px;
+}
+.feed-city .ion-location{
+	color: #FF8386;
+	font-size: 14px;
+}	
+
+.fabFeed .upper-row .row:nth-child(1) .col-20{
+	text-align: center;
+}
+
+.fabFeed .upper-row1 .col{
+	text-align: center;
+}
+
+.fabFeed .upper-row1 .col-offset-20 i, .fabFeed .upper-row1 .comment-btn{
+	text-align: center;
+	color:#5a5a5a;
+
+}
+/* Fix modal backdrop for smaller devices */
+@media (max-width: 679px) {
+  .fabFeed.active .modal-backdrop-bg {
+    opacity: 1;
+  }
+  .fabFeed.modal-backdrop-bg {
+    -webkit-transition: opacity 300ms ease-in-out;
+    transition: opacity 300ms ease-in-out;
+    background-color: #000;
+    opacity: 0;
+  }
+}
+/*------------------------------------------*/
+
+.button-custom {
+  color: #fff !important;
+  background-color: #FF8386 !important;
+}
+
+.fabFeed .feeds{
+	border-bottom: 1px solid #bcbcbc;
+}
+
+.fabFeed .clicked{
+	color: #EF0F20;
+}
+
+.fabFeed .upper-row{
+	padding: 10px 0px 0px 0px;
+}
+.fabFeed .upper-row1{
+	padding: 0px 10px;
+}
+
+.fabFeed .center{
+	text-align: center;
+}
+
+.fabFeed .tab-row{
+	padding: 0px;
+	border-bottom: 1px solid #bcbcbc;
+}
+.fabFeed .active-tab{
+	border-bottom: 4px solid #FF8386;
+}
+.fabFeed .active-tab p{
+	color: #ff8386 !important;
+}
+.fabFeed .center-tab p{
+	margin-bottom: 0px!important;
+	color: #4d4d4c;
+}
+.fabFeed .center-tab{
+	border-left: 1px solid #bcbcbc;
+	border-right: 1px solid #bcbcbc;
+}
+.save_button_color{
+	background-color: #ff8386 !important;
+	color: #ffffff;
+}
+.fabFeed #profile-pic{
+	border: 2px solid #8e8e8e;
+	border-radius: 50%;
+
+}
+
+.fabFeed .user-info{
+	margin-top: 10px;
+}
+
+.fabFeed .user-name{
+	margin-top: 5px;
+	font-size: 18px;
+	text-transform: capitalize;
+  margin-bottom: 10px;
+  color:#777;
+}
+.fabFeed .user-details{
+
+	font-size: 16px;
+}
+.fabFeed .col-border{
+  /*border-right: dashed 1px #a5a5a5;*/
+  border-right: 2px solid #444;
+
+}
+
+.fabFeed .user-details span{
+	font-size: 0.8em;
+}
+
+.fabFeed a{
+	text-decoration: none;
+	font-size: 14px; 
+	
+}
+
+.fabFeed .follow-btn{
+	border: 1px solid #FF8386;
+	border-radius: 5px;
+	color: #FF8386;
+	padding: 1px 10px;
+}
+
+.fabFeed .unfollow-btn{
+  border: 1px solid #bcbcbc;
+  border-radius: 5px;
+  color: #bcbcbc;
+  padding: 1px 5px;
+  font-size: 12px;
+	display: none
+}
+
+.fabFeed .follow-btn1{
+	border: 2px solid #FF8386;
+	border-radius: 5px;
+	color: #FF8386;
+	padding: 5px 10px;
+	font-weight: bold;
+}
+
+.new-feed .follow-btn{
+	border: 2px solid #FF8386;
+	border-radius: 5px;
+	color: #FF8386;
+	padding: 5px 10px;
+	font-weight: bold;
+}
+
+.new-feed .profile-details{
+	text-align: center;
+}
+
+.fabFeed .feed-name a, .comment-name{
+	font-weight:500;
+	color: #000;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+.comment-date{
+   color: #bcbcbc !important;
+   font-size: 0.9em;
+}
+
+.fabFeed .feed-name{
+	/*font-size: 1em;*/
+	margin: 0px;
+}
+
+.fabFeed .feed-title {
+	font-size:1.1em;
+	font-weight:400;
+}
+
+.fabFeed .feed-img {
+	width:100%;
+	height:auto;
+}
+
+.fabFeed .feed-introduction {
+	font-size:1em;
+	font-weight:400;
+}
+.fabFeed .likeFeed {
+	margin:10px;
+	font-size:1em;
+}
+
+.fabFeed .likeFeed i{
+	font-size:1em;
+	margin:10px;
+}
+
+.fabFeed i.like-btn.ion-heart, .fabFeed i.comment-btn.ion-ios-chatbubble, .fabFeed i.share-btn.ion-android-share-alt{
+  font-size: 25px;
+  /*color: #bcbcbc;*/
+}
+
+.fabFeed .likenum{
+	line-height: 30px;
+	position: relative;
+	 display: inline-block;
+}
+
+.fabFeed .likenum i{
+	/*color: #FF8386;*/
+}
+
+.fabFeed .likenum span{
+	color: #525252;
+	position: absolute; width: 100%;
+	padding-left: 10px; display: inline-block;
+}
+.popover-open .popover {margin-top: 10px;}
+
+
+
+.fabFeed .feedend{
+	color: #FF8386;
+	text-align: center;
+}
+
+.fabFeed .user_icon {
+
+	border-radius: 50%;
+	border: 1px solid #a0a0a0;
+}
+
+.new-feed, .new-feed form{
+	background: url("../../img/new-feed-bg.jpg") no-repeat center center;
+}
+
+.new-feed .des{
+	padding: 20px 0px;
+	text-align: center;
+}
+.new-feed .des1{
+	padding: 10px 0px;
+	text-align: center;
+}
+.new-feed .des label, .new-feed .des1 label{
+	font-size: 1.2em;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+.new-feed .upload{
+	width:200px;
+	height:180px;
+	border:1px solid #cccccc;
+	margin:0 auto;
+	padding:30px 10px;
+	border-radius:5px;
+	background:#fff;
+	text-align: center;
+}
+
+.new-feed .upload1{
+	text-align: center;
+}
+
+.new-feed .upload img{
+	padding-bottom:20px;
+	width:50px;
+	margin:0 auto;
+}
+.new-feed .upload label{
+	color:#666666;
+	font-weight:normal;
+	font-size:13px;
+	margin:0 auto;
+}
+
+.new-feed .profile-details{
+	padding: 10px 10px 0px 10px;
+}
+
+.new-feed .feed-comment{
+	margin: 10px;
+}
+
+.new-feed button.pink-bg{
+	background-color: #FF8386;
+	border: none;
+	color: #fff;
+	font-weight: bold;
+}
+
+.fabFeed .initiallyHidden{
+   display: none;
+}
+.fabFeed .item_view{
+	background-color: aliceblue;
+	padding: 5px!important;
+	font-size: 12px;
+}
+.fabFeed .item_view .row:nth-child(1){
+	padding: 0 0 0;
+}
+.fabFeed .item_view .comment-user-name{
+	text-transform: capitalize;
+}

@@ -1,0 +1,108 @@
+<ion-view class="appointment view-background">
+	<div class="bar bar-header bar-light">
+	<a class ="pdl5" ng-click="back()"><img class="imgiconall" src="img/home/nleft.png"></a>
+	    <h1 class="title">APPOINTMENT</h1>
+	</div>
+	<ion-content scroll ="false" class="has-header has-footer">
+		<div class="row dark-bg">
+			<div class="col col-33 mgt30" ng-click="leftArrowClicked()">
+				<a class="button icon-left button-clear button-light ion-ios-arrow-back">Prev</a>
+			</div>
+			<div class="col-33">
+				<div class="card custom-card margin">
+					<div class="date">{{date}}</div>
+					<div class="month">{{currentMonth}}</div>
+					<div class="day">{{day}}</div>
+				</div>
+			</div>
+			<div class="col col-33 mgt30" ng-click = "rightArrowClicked()">
+				<a class="button icon-right button-clear button-light ion-ios-arrow-forward">Next</a>
+			</div>
+		</div>
+		<ion-item class= "custom-divider" ng-class="active_slot_1?'selected_slot':'not_selected_slot'">
+			<i class="icon ion-android-sunny custom-icon"></i>
+			<span class ="time-interval" ng-class="active_slot_1?'selected_slot':'not_selected_slot'">9AM-12AM</span>
+		</ion-item>
+		<ion-item class = "custom-divider" ng-class="active_slot_2?'selected_slot':'not_selected_slot'">
+			<i class="icon ion-android-sunny custom-icon"></i>
+			<span class = "time-interval" ng-class="active_slot_2?'selected_slot':'not_selected_slot'">12AM-3PM</span>
+		</ion-item>
+		<ion-item class = "custom-divider" ng-class="active_slot_3?'selected_slot':'not_selected_slot'">
+			<i class="icon ion-ios-time-outline custom-icon"></i>
+			<span class = "time-interval" ng-class="active_slot_3?'selected_slot':'not_selected_slot'">3PM-6PM</span>
+		</ion-item>
+		<ion-item class = "custom-divider" ng-class="active_slot_4?'selected_slot':'not_selected_slot'">
+			<i class="icon ion-ios-moon custom-icon"></i>
+			<span class = "time-interval" ng-class="active_slot_4?'selected_slot':'not_selected_slot'">6PM-9PM</span>
+		</ion-item>
+
+		<ion-scroll has-bouncing="false" direction="y" scrollbar-y="false"
+					ng-style="{height: getItemHeight()}"  class="scroll-view">
+		 	<div class ="fix-bar">
+		 		<ion-list>
+		 			<ion-item id = "timeitem" ng-repeat="time in timeSlots9To12"
+							  class = "custom-item" >
+		 				<div id="{{time.id}}" class="time-button button" ng-disabled ="time.isDisabled"
+							 ng-class="time.isDisabled?'time-disabled':'time-enabled'"
+							 ng-click="timeSelected($index,time.id)" ng-model="time.selected">
+			 				{{time.time}}
+			 			</div>
+		 			</ion-item>
+	 			</ion-list>
+			</div>
+		</ion-scroll>
+
+		<ion-scroll has-bouncing = "false" direction = "y" scrollbar-y="false"
+					ng-style="{height: getItemHeight()}" class="scroll-view">
+			<div class = "fix-bar">
+				<ion-list>
+		 			<ion-item ng-repeat = "time in timeSlots12To3" class = "custom-item" >
+		 				<div id="{{time.id}}" ng-disabled ="time.isDisabled"
+							 ng-class="time.isDisabled?'time-disabled':'time-enabled'" class="time-button button"
+							 ng-click="timeSelected($index,time.id)" ng-model="time.selected">
+			 				{{time.time}}
+			 			</div>
+		 			</ion-item>
+				</ion-list>
+			</div>
+		</ion-scroll>
+
+		<ion-scroll has-bouncing = "false" direction = "y" scrollbar-y="false" class="scroll-view"
+					ng-style="{height: getItemHeight()}">
+		    <div class = "fix-bar">
+	 			<ion-list>
+		 			<ion-item ng-repeat = "time in timeSlots3To6" class = "custom-item" >
+		 				<div id="{{time.id}}" class="time-button button" ng-disabled ="time.isDisabled"
+							 ng-class="time.isDisabled?'time-disabled':'time-enabled'"
+							 ng-click="timeSelected($index, time.id)" ng-model="time.selected">
+			 				{{time.time}}
+			 			</div>
+		 			</ion-item>
+				</ion-list>
+		    </div>
+		</ion-scroll>
+
+		<ion-scroll has-bouncing = "false" direction = "y" scrollbar-y="false" class="scroll-view"
+					ng-style="{height: getItemHeight()}">
+		    <div class = "fix-bar">
+				<ion-list>
+		 			<ion-item ng-repeat = "time in timeSlots6To9" class = "custom-item" >
+		 				<div id="{{time.id}}" class="time-button button" ng-disabled ="time.isDisabled"
+							 ng-click="timeSelected($index,time.id)" ng-class="time.isDisabled?'time-disabled':'time-enabled'">
+			 				{{time.time}}
+			 			</div>
+		 			</ion-item>
+				</ion-list>
+		    </div>
+		</ion-scroll>
+
+		<div class="bottom-widget">
+			<span>Scroll down for more slots</span>
+		</div>
+	</ion-content>
+	<ion-footer-bar class ="bar custom-footer" align-title="center" ng-click="confirmation()">
+		<span class ="title footer_text" id="striketextcolor">
+			CONTINUE TO CHECKOUT
+		</span>
+	</ion-footer-bar>
+</ion-view>

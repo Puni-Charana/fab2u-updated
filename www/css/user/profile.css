@@ -1,0 +1,36 @@
+.userProfile .center{
+	text-align: center;
+}
+
+.userProfile .center i{
+	font-size: 30px;
+	margin-left: 30px;
+	position: absolute
+}
+
+.userProfile .profile-pic{
+	border: 4px solid #FF8386;
+	border-radius: 50%;
+}
+
+.userProfile .user-info{
+	margin-top: 10px;
+}
+
+.userProfile .user-name{
+	margin-top: 5px;
+	font-size: 1em;
+	text-transform: uppercase;
+}
+
+.userProfile a{
+	text-decoration: none;
+}
+
+.userProfile .follow-btn{
+	border: 2px solid #FF8386;
+	border-radius: 5px;
+	color: #FF8386;
+	padding: 5px 10px;
+	font-weight: bold;
+}

@@ -1,0 +1,15 @@
+<ion-modal-view class="modal-view">
+    <ion-header-bar>
+        <h1 class="title modal-title">Locality</h1>
+        <i class="icon ion-close close_icon" ng-click="close_location()"></i>
+    </ion-header-bar>
+    <ion-content class="padding">
+        <ion-list ng-repeat="locality in localities| orderBy : 'locationName'" ng-show="localities">
+            <ion-radio ng-model="isChecked" ng-value="locality"
+                       ng-click="location_selected(locality)">{{locality.locationName}}</ion-radio>
+        </ion-list>
+        <ion-list ng-hide="localities">
+            No,Locality found.
+        </ion-list>
+    </ion-content>
+</ion-modal-view>

@@ -1,0 +1,50 @@
+<ion-view class="bill">
+  <ion-content>
+    <div id="bg"><!-- <img src="img/background.jpg" alt=""> --></div>
+    <div id = "container">
+      <div id = "thankYou">
+          <h4>THANK YOU</h4>
+          <h5>Your Booking ID is {{bookingInformation.bookingId}}</h5>
+      </div>
+          
+      <div>
+        <div  id = "myBill" class = "container">
+          <div class = "custom-border padding class"><b>Venue: </b>{{bookingInformation.venue}}</div>
+          <div class = "custom-border padding class"><b>Address: </b>{{bookingInformation.address1}} {{bookingInformation.address2}}</div>
+          <div class="padding class custom-border">
+            <b>Services </b>
+            <div ng-repeat = "service in bookingInformation.serviceInfo">{{service.menuItemName}}</div>
+          </div>
+            <div class = "custom-border  padding class"><b>Total Service Cost</b>: ₹{{bookingInformation.vendorAmount}}</div>
+            <div class = "custom-border  padding class"><b>Total Amount Payable By Customer</b>: ₹{{bookingInformation.amountPayable}}</div>
+            <div class = "custom-border  padding class"><b>Amount Payable By Fab2u</b>: ₹{{bookingInformation.fab2uPayableAmount}}</div>
+          <div class = "custom-border  padding class" ng-show="bookingInformation.walletAmount"><b>Paid From Wallet</b>: ₹{{bookingInformation.walletAmount}}</div>
+          <div class = "custom-border padding class"><b>Time</b>: {{bookingInformation.appointmentTime |date:"h:mma"}}</div>
+          <div class = "custom-border padding class"><b>Date</b>: {{bookingInformation.appointmentTime |date:'dd-MM-yyyy'}}</div>
+          <p align = "center" ng-show="cancelButton == false">
+              <button class = "button button-assertive button-small custom-button" ng-click="home()">HOME</button>
+              <br>
+              <b>Wallet amount is refundable only if booking is cancelled 2 hrs prior to appointment time.</b>
+          </p>
+              <div class="row" ng-show="cancelButton == true">
+            <div class="col-50 pull-left">
+                <button class = "button button-assertive button-small custom-button" ng-click="availed()">
+                    AVAILED</button>
+            </div>
+            <div class="col-50 pull-right">
+                <button class = "button button-assertive button-small custom-button" ng-click="notAvailed()">
+                    NOT AVAILED</button>
+            </div>
+             </div>
+        </div>
+      </div>
+         <div class="bottom-text" align = "center" id = "smile"><img src = "img/happy.png" height="14%" width="14%">
+          <p>ENJOY YOUR SERVICES</p>
+          </div>
+          <!-- <div class="buttons" align = "center">
+            <button class="button button-positive icon ion-ios-location" id="location"
+                    ng-click="open_map(bookingInformation.vendorLat,bookingInformation.vendorLong,bookingInformation.address1,bookingInformation.address2,bookingInformation.vendorName)"></button>
+          </div> -->
+      </div>
+  </ion-content>
+</ion-view>

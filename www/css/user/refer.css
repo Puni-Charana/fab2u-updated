@@ -1,0 +1,98 @@
+/* Empty. Add your own CSS if you like */
+
+.refer .custom-bar {
+	background-color: #404040 !important;
+	margin-bottom :5px;
+}
+
+.refer .custom-title {
+	background-color: #404040 !important;
+}
+
+.refer .refer-content{
+    /*background: url(../../img/refer-friend-bg.png);
+    background-repeat: repeat;*/
+}
+
+.refer .image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.refer .referral-code {
+    display: table;
+    margin: 0 auto;
+	margin-left: auto;
+    margin-right: auto;
+    margin-top:5px;
+    margin-bottom: 25px;
+    text-align:center;
+    font-size:17px;
+    color:#FF0000;
+    border: 1px solid #000000;
+    padding:5px;
+    border-radius: 4px;
+}
+
+.refer .custom-card {
+	margin-top: 10px;
+	background-color: #F3F3F3;
+    opacity: 0.8;
+}
+
+.refer .referral-description {
+	display:block;
+	font-size: 15px;
+	padding-right: 30px;
+	padding-left: 30px;
+	padding-top: 10px;
+	text-align: center;
+}
+
+.refer .image{
+    height:200px;
+    width:210px;
+}
+
+.refer .custom-footer {
+	margin-left: 5px;
+	width: calc(100% - 10px);
+	border-top:none !important;
+	padding-top: 0px !important;
+	border-top: none !important;
+}
+
+.refer .right-half {
+	height: 44px;
+    background-color: #FE8480;
+    position: absolute;
+    right: 0px;
+    width: 50%;
+    border-top-right-radius: 10px;
+    text-align: center;
+}
+
+.refer .left-half {
+	height: 44px;
+    background-color: #37E2DC;
+    position: absolute;
+    left: 0px;
+    width: 50%;
+    border-top-left-radius: 10px;
+    text-align: center;
+}
+.refer .container {
+  display: table;
+}
+
+.refer .footer-text {
+	font-size:12px;
+	padding-top:10px;
+	color:#ffffff;
+}
+
+.refer .referral-text {
+	text-align:center;
+	font-size:18px;
+	margin-bottom: 0px;
+}

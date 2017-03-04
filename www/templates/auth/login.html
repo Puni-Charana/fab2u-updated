@@ -1,0 +1,31 @@
+<ion-view>
+    <ion-content id="loginform" scroll="false">
+        <button class="button button-dark button-small icon ion-chevron-left" id="backbutton"
+                ng-click="back()"></button>
+        <form name="loginForm">
+        <div id="formdetails">
+            <center>
+                <img src="img/logo-app-new.png" width=50%; height=50%></center>
+                <div class="list list-inset" >
+                    <label class="item item-input ion-ios-email-outline" id="formborder1">
+                        <input class="spaceGap1" type="email" placeholder="Email Address" ng-model="user.user_email" required>
+                    </label>
+                    <label class="item item-input ion-ios-locked-outline" id="formborder2">
+                        <input class="spaceGap2" type="password" placeholder="Password" ng-model="user.user_password" required>
+                    </label>
+                </div>
+                <button class="button button-block" id="pinkbgcolor" ng-click="loginEmail()"
+                        ng-disabled="loginForm.$invalid">Log In</button>
+        </div>
+        </form>
+        <div id="formdetails">
+                <div id="forgotpassword" ng-click="showPopup()">
+                    Forgot Password? <a id="pinkcolor"><strong>Reset</strong></a>
+                </div>
+        </div>
+        <div id="askforaccount">
+           Don't have an account? <a id="pinkcolor" href="#/signup"><strong>Create one</strong></a>
+        </div>
+    </ion-content>
+
+</ion-view>

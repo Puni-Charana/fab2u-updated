@@ -1,0 +1,97 @@
+.searchservices .search-services-header
+{
+  background-color: #fff;
+}
+/*.custom-search{
+  position:relative;
+  margin-left:15px;
+  margin-right:15px;
+  margin-top: 5px;
+  border-radius: 5px;
+  width:98%;
+}*/
+
+.searchservices .search-services-header i{
+    color:#444;
+    /*padding-left: 0px;
+    padding-right: 10px;
+    padding-top:5px;*/
+    font-size: 20px;
+}
+.searchservices .search-services-header h1{
+    color: #444;
+    margin-left: 30px;
+}
+
+.searchservices .vendororservice{
+  float:right;
+  border-radius: 5px!important;
+  border:1px solid #A4A4A4;
+  width:25%;
+  height:22px;
+  text-align: center;
+  font-size:12px;
+}
+
+
+.searchservices .search input {
+
+  height: 32px;
+
+  background: white;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+ 
+}
+
+.searchservices .search input { text-indent: 32px;}
+.searchservices .search .fa-search { 
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+ .searchservices  .search-input input{
+    padding: 10px;
+    line-height: 30px;
+      
+
+  }
+
+ .searchservices .search-input .button{
+    color:#ccc !important;
+    font-style: 1.2em !important;
+    margin-right: 5px;
+  }
+
+  .searchservices .search-input{
+    border-radius: 5px;
+    width:90%;
+    margin: 0  auto;
+  }
+  .searchservices .input-icons{
+    font-size:20px;
+  }
+  .servicelist{
+    position:relative;bottom:42px;
+  }
+.locationList{
+    position:relative;
+}
+.searchservices .locationListing{
+    margin:3px auto;
+    background-color:#F0F0F0;
+    border-bottom:1px solid #A4A4A4;
+    border-top:1px solid #A4A4A4;
+}
+  .searchservices .vendorservicelist{
+    margin:3px auto;
+    background-color:#F0F0F0;
+    border-bottom:1px solid #A4A4A4;
+    border-top:1px solid #A4A4A4;
+  }
+  .searchservices .servicelist{
+  margin:1px auto;
+  position:relative;
+  top:39px;
+}

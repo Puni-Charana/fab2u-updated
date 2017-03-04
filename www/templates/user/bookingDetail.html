@@ -1,0 +1,49 @@
+<ion-view class = "bill">
+    <ion-header-bar class="bar-light">
+        <button class = "pdl5 button-clear" ng-click="back()"><img class="imgiconall" src="img/home/nleft.png"></button>
+        <h1 class="title">BOOKING DETAIL</h1>
+        <!--<button class = "button button-clear icon ion-ios-list-outline"></button>-->
+    </ion-header-bar>
+    <ion-content>
+        <div id="bg"><img src="img/background.jpg" alt=""></div>
+        <div id = "container">
+            <div id = "thankYou">
+                <h4>THANK YOU</h4>
+                <h5>Your Booking ID is {{bookingInformation.bookingId}}</h5>
+            </div>
+
+            <div>
+                <div  id = "myBill" class = "container">
+                    <div class = "custom-border padding class"><b>Venue: </b>{{vendorDetail.address.landmark}}</div>
+                    <div class = "custom-border padding class"><b>Address: </b>{{vendorDetail.address.address1}} {{vendorDetail.address.address2}}</div>
+                    <div class="padding class custom-border">
+                        <b>Services </b>
+                        <div ng-repeat = "service in bookingInformation.serviceInfo">{{service.menuItemName}}</div>
+                    </div>
+
+                    <div class = "custom-border  padding class"><b>Total Service Cost</b>: ₹{{bookingInformation.vendorAmount}}</div>
+                    <div class = "custom-border  padding class"><b>Total Amount Payable By Customer</b>: ₹{{bookingInformation.amountPayable}}</div>
+                    <div class = "custom-border  padding class"><b>Amount Payable By Fab2u</b>: ₹{{bookingInformation.fab2uPayableAmount}}</div>
+                    <div class = "custom-border  padding class" ng-show="bookingInformation.walletAmount"><b>Paid From Wallet</b>: ₹{{bookingInformation.walletAmount}}</div>
+                    <div class = "custom-border padding class"><b>Time</b>: {{bookingInformation.appointmentTime | date:"h:mma"}}</div>
+                    <div class = "custom-border padding class"><b>Date</b>: {{bookingInformation.appointmentTime| date:'dd-MM-yyyy'}}</div>
+                    <div class = "custom-border padding class">
+                        <b ng-show="bookingInformation.userStatus == 'cancelled'">Status: Cancelled</b>
+                        <b ng-show="bookingInformation.userStatus == 'upComing'">Status: Upcoming</b>
+                        <b ng-show="bookingInformation.userStatus == 'notAvailed'">Status: Not Availed</b>
+                        <b ng-show="bookingInformation.userStatus == 'availed'">Status: Availed</b>
+
+                    </div>
+                </div>
+            </div>
+            <div class="bottom-text" align = "center" id = "smile"><img src = "img/happy.png" height="14%" width="14%">
+                <p>ENJOY YOUR SERVICES</p>
+            </div>
+            <div class="buttons" align = "center">
+                <button class="button button-positive icon ion-ios-location" id="location"
+                        ng-click="open_map(vendorDetail.address.latitude,vendorDetail.address.longitude,vendorDetail.address.address1,vendorDetail.address.address2,vendorDetail.vendorName)"></button>
+            </div>
+        </div>
+        </div>
+    </ion-content>
+</ion-view>

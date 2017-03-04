@@ -1,0 +1,128 @@
+.bill #bg {
+  position: fixed; 
+  top: -50%; 
+  left: -50%; 
+  width: 200%; 
+  height: 200%;
+}
+.bill #bg img {
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  right: 0; 
+  bottom: 0; 
+  margin: auto; 
+  min-width: 50%;
+  min-height: 50%;
+  opacity: 0.4;
+  filter: alpha(opacity=40);
+}
+
+.bill #thankYou {
+	width: 74%;
+	margin: auto;
+	/*position: absolute;*/
+	margin-top: 6%;
+	border-top-left-radius: 1em;
+	border-top-right-radius: 1em;
+	text-align: center;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	position: relative;
+    padding: 0.5px 0.5px 0.5px 0.5px;
+    background: rgb(211,211,211);
+    opacity: 0.7;
+    filter: alpha(opacity=40);
+    font-color: red !important;
+}
+
+.bill #thankYou h4{
+    color: #D24248
+}
+.bill #thankYou h5{
+    color:solid #444
+}
+.bill #myBill {
+    width: 74%;
+    height: auto;
+    font-size: 0.9em;
+    margin: 1.5% auto;
+    color: #444;
+    opacity: 0.7;
+    border-style: hidden;
+}
+
+.bill #container {
+	margin: 5% auto;
+	height: 60% auto;
+	border-style: hidden;
+}
+
+.bill .custom-button {
+	text-align: center;
+	border-radius: 8px;
+	width: 80%;
+	color: white;
+	background-color: #FF8386;
+	margin-top: 5px;
+}
+.bill b{
+    font-size: 14px;
+}
+.bill .custom-border {
+  text-align: center;
+  border-left-width: 0px;
+  border-right-width: 0px;
+  border-top-width: 0px;
+  border-style: solid;
+  border-bottom-width: 0.1px;
+  border-color: #444;
+  padding: 8px;
+  font-size: 15px;
+}
+
+.bill .container {
+        position: relative;
+        padding: 8px 8px 15px 8px;
+        background: rgb(211,211,211);
+        opacity: 0.7;
+        border-style: hidden;
+    	filter: alpha(opacity=40);
+    }
+
+.bill .container:after {
+        background: linear-gradient(-45deg, #a2a2a2 16px, transparent 0), linear-gradient(45deg, #a2a2a2 16px, transparent 0);
+        background-position: left-bottom;
+        background-repeat: repeat-x;
+        background-size: 32px 32px;
+        border-style: hidden;
+        content: " ";
+        display: block;
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        width: 100%;
+        height: 25px;
+        opacity: 1;
+        border-style: hidden;
+        /*margin-left: -31px;*/
+    	filter: alpha(opacity=40);
+    }
+
+.bill #smile {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.bill #location {
+	border-radius: 50%;
+	background-color: #D24248;
+}
+
+#rateNow {
+    text-align:center;
+    background-color:#ebebe0;
+}
+.bill .bottom-text p {
+    color: #D24248
+}

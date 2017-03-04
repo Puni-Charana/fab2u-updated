@@ -1,0 +1,167 @@
+.vendorList .m-navColor {
+    background-color: #424242;
+}
+.selected_amenity{
+    color: #0a9dc7;
+}
+.not_selected_amenity{
+    color: #666;
+}
+.vendorList .m-navColor .title {
+    text-decoration: #EEEEEE;
+    color: #EEEEEE;
+}
+.vendorList .m-navColor a.button {
+    text-decoration: #EEEEEE;
+    color: #EEEEEE;
+}
+
+.vendorList .m-navColor a.button:before {
+   font-size: 24px !important;
+    line-height: 28px !important;
+}
+.vendorList #toggleButton {
+    position: absolute;
+    right: 0;
+    font-size: 30px;
+    color: #f1f2f3;
+    margin-right: 7px;
+}
+
+.filter_row{
+    background:#f9f9f9;
+    color:#000000;
+    border-top:1px solid #d6d6d6;
+    border-bottom:1px solid #d6d6d6; line-height:40px;
+    padding:0 20px; font-size:17px;
+}
+.filter_row .price-text{
+    margin-right: 160px;
+}
+.filter_row2{
+    padding: 15px 0;
+}
+.type_btn{
+    border:1px solid #d6d6d6;
+    color:#000000;
+    background:#f9f9f9;
+    border-radius: 20px;
+    margin: 0 3px;
+    font-size: 15px;
+    padding: 5px 25px;}
+.type_btn:focus{
+    background:#FF8285;
+    color:#ffffff;
+    border:1px solid #FF8285
+}
+
+.activeButton{
+    background:#FF8285;
+    color:#ffffff;
+    border:1px solid #FF8285
+}
+.not_activeButton{
+    background:#f9f9f9;
+    color:#000000;
+    border:1px solid #d6d6d6;
+}
+@media screen and (max-width:350px){
+    .type_btn{padding:5px 15px;}
+}
+.filter .rightText{float:right;}
+div.stars {
+
+    width: 270px;
+
+    display: block;
+    margin: 0 auto;
+    height: 50px;
+}
+.filter .loc{
+    width:100%;
+    text-indent:20px;
+}
+.text-bold{
+    margin-left: 20px;
+    font-size: 18px;
+    font-weight: 600;
+    margin-right: 10px;
+}
+.loc p{
+    /*margin-left: 20px;*/
+}
+.loc i{
+    font-size: 20px;
+    /*margin-left: 260px;*/
+    float: right;
+}
+.loc p span{
+    margin-left: 10px;
+}
+
+.filter .amenities{
+    float: none;
+    padding: 0;
+    display: inline-block;
+    width: auto;
+}
+
+.amenities i{
+    font-size: 30px;
+}
+.vendorList .custom-footer {
+    margin-left: 5px;
+    width: calc(100% - 10px);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: #FF8385;
+    border: 5px #FF8385;
+}
+.vendorList .footer_text{
+    font-size: 16px;
+    line-height: 35px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.second_modal{
+    width: 60%;
+    float: right;
+    position: absolute;right:0;top:0;
+}
+
+.locality_icon{
+    font-size: 30px;
+    color: #FF8385;
+    float: right;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+}
+
+.third_modal{
+    width: 70%;
+    float: right;
+    position: absolute;right:0;top:0;
+}
+.locality_title{
+    display: block;
+    position: absolute;
+    top: 0;
+     /*right: 0;*/
+    left: 15px;
+    z-index: 0;
+    overflow: hidden;
+    margin: 0 0px;
+    min-width: 30px;
+    /* height: 43px; */
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 45px;
+}
+.selectedLocality{
+    padding: 7px;
+}

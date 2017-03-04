@@ -1,0 +1,61 @@
+<ion-view id="servicelistslider">
+    <ion-content delegate-handle="mainScroll">
+        <div  id="img-container" class="row">
+            <img  ng-if="currSlide === 0" ng-src="{{services.Face.image}}">
+            <img  ng-if="currSlide === 1" ng-src="{{services.Hair.image}}">
+            <img  ng-if="currSlide === 2" ng-src="{{services.HairRemoval.image}}">
+            <img  ng-if="currSlide === 3" ng-src="{{services.Body.image}}">
+            <img  ng-if="currSlide === 4" ng-src="{{services.HandsNfeets.image}}">
+            <img  ng-if="currSlide === 5" ng-src="{{services.Nails.image}}">
+            <img  ng-if="currSlide === 6" ng-src="{{services.Packages.image}}">
+            <div class="backButton icon ion-chevron-left" ng-click="backButton()">
+            </div>
+            <div class="searchButton" ng-click="discoverSalons()">
+                <img src="img/search.png">
+                <p>Salons</p>
+
+            </div>
+        </div>
+        <ion-scroll zooming="false" direction="x" id="scrollTabs" delegate-handle="myhandel"
+                    style="position: relative">
+            <div id="container">
+                <div style="width:1800px;">
+                    <div class="tab"
+                         ng-class="$index == index_number ? 'active':''"
+                         ng-repeat="item in ['FACE', 'HAIR','HAIR REMOVAL', 'BODY', 'HANDS & FEET','NAILS','PACKAGES']"
+                         ng-click="tabWithSlideChanged($index)">
+                        <img ng-if="item == 'FACE'" src="img/Face.png" style="height: 35px;">
+                        <img ng-if="item == 'BODY'" src="img/Body-Care.png" style="height: 35px;">
+                        <img ng-if="item == 'HAIR'" src="img/Hair.png" style="height: 35px;">
+                        <img ng-if="item == 'HANDS & FEET'" src="img/Hands-feet.png" style="height: 35px;">
+                        <img ng-if="item == 'HAIR REMOVAL'" src="img/Waxing.png" style="height: 35px;">
+                        <img ng-if="item == 'NAILS'" src="img/nail.png" style="height: 35px;">
+                        <img ng-if="item == 'PACKAGES'" src="img/packege.png" style="height: 35px;">
+                        <p>{{item}}</p>
+                    </div>
+                </div>
+            </div>
+        </ion-scroll>
+        <div class="moreButton icon ion-chevron-right" ng-click="scrollToRight($event)"></div>
+        <div>
+            <ion-slide-box on-slide-changed="slideHasChanged($index,false)" show-pager="false">
+                <ion-slide ng-repeat="service in services">
+                    <ion-list>
+                        <span ng-if="currSlide==$index">
+                        <ion-item ng-repeat="serviceItem in service.name"
+                                  class="item-thumbnail-right list_view"
+                                  ng-click="selectItem($index,serviceItem.name,serviceItem.id)">
+                            {{serviceItem.name}}
+                                <img src="img/home/new-slider/square-blue.png"
+                                     class="img_icon" ng-show="selectedServices[serviceItem.name]">
+                        </ion-item>
+                        </span>
+                    </ion-list>
+                </ion-slide>
+            </ion-slide-box>
+        </div>
+    </ion-content>
+    <ion-footer-bar id="footer-bar" align-title="center" ng-click="findVendors()">
+        <h1 class="title">FIND VENDORS</h1>
+    </ion-footer-bar>
+</ion-view>

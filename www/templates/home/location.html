@@ -1,0 +1,16 @@
+<ion-view class="">
+    <div class="bar bar-header bar-light" ng-click="backButton()" ng-show="backButtonValue">
+       <a class="pdl5"><img class="imgiconall" src="img/home/nleft.png"></a>
+        <h1 class="title">LOCATIONS</h1>
+    </div>
+    <div class="bar bar-header bar-light" ng-hide="backButtonValue">
+        <h1 class="title">LOCATIONS</h1>
+    </div>
+    <ion-content class="has-header">
+        <ion-list class="locationList">
+            <ion-item ng-repeat="item in cityList" class="locationListing" ng-click="selected_city(item)">
+                {{item.cityName}}
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

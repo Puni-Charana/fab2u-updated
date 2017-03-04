@@ -1,0 +1,96 @@
+<ion-view class="fabFeed" cache-view="false">
+    <ion-header-bar align-title="center" class="bar-light" title="FOLLOW FEEDS" ng-show="dataLoaded">
+        <a class="pdl5 mgn" ng-click="goBack()"><img class="imgiconall" src="img/home/nleft.png"></a>
+        <h1 class="title">{{userDetails.name}}'s Feeds</h1>
+        <button ng-click="createNew()" class="button button-clear button-positive mg-5"><i class="icon ion-ios-camera-outline" ></i></button>
+
+    </ion-header-bar>
+
+    <ion-content class="has-header" ng-show="dataLoaded">
+        <ion-refresher pulling-text="Loading New Feed" on-refresh="doRefresh()"></ion-refresher>
+        <div class="feeds" ng-repeat="feed in blogArr | orderBy:'-created_time'">
+            <div class="upper-row">
+                <div class="row pdtnone">
+                    <div class="fd-img">
+                        <img class="user_icon img-circle" id="{{feed.blog_id}}"
+                             ng-src="{{feed.profilePic || 'img/person.jpg'}}" width="40" height="40"/>
+                    </div>
+                    <div class="col col-60">
+                        <p class="feed-name">
+                            <!-- 
+                            Original
+                            <a href="#/user/{{feed.user.user_id}}"> {{feed.user.user_name}} </a> | {{feed.created_time | date:'d MMM yy'}}</p>
+                            -->
+                            <!--
+                            modified
+                            url user/user-id does not exist
+                             -->
+                            <a href="javascript:;"> {{feed.user.user_name}} </a> | {{feed.created_time | date:'d MMM yy'}}
+                        </p>
+                        <p class="feed-city"><i class="ion ion-location"></i> {{feed.city_name}}</p>
+                    </div>
+                    <div class="col col-offset-10 follow-wrap platform text-right">
+                        <a class="button button-icon icon ion-ios-more pdrt10" ng-click="openPopover($event,feed)"></a>
+                    </div>
+                </div>
+            </div>
+            <img ng-src="{{feed.photoUrl}}" class="feed-img" ng-click="showImage(feed.photoUrl)">
+            <div class="row mgtn2">
+                <div class="col pdl10 pdt10">
+                    <p ng-bind-html="toTrustedHTML(feed.introduction)" class="feed-introduction"></p>
+                    <p style="color:blue;" ng-show="feed.link" ng-click="openUrl(feed.link)">Read More</p>
+                </div>
+            </div>
+            <div class="row upper-row1">
+                <div class="col col-33 likenum text-left">
+                    <i class="like-btn icon ion-ios-heart-outline ft25" ng-class="feed.liked?'clicked':'normal'"
+                       ng-click="likeThisFeed(feed)"></i>
+                    <span>{{feed.numLikes || 0}} likes</span>
+                </div>
+                <div class="col col-50 likenum text-left">
+                    <i class="comment-btn icon ion-ios-chatbubble-outline ft25"
+                       ng-click="commentPost(feed.blog_id)"></i>
+                    <span ng-click="commentToggle(feed.blog_id)">{{feed.commentCount || 0}} comments</span>
+                </div>
+            </div>
+            <div id="{{feed.blog_id}}-commentsBlock" class="initiallyHidden">
+                <ion-list>
+                    <ion-item class="item_view" ng-repeat="comment in feed.commentsArr">
+                        <div class="row">
+                            <div class="col-67 comment-name comment-user-name">{{comment.userName}}</div>
+                            <div class="col-33">{{comment.created_time |  date:'MM/dd/yyyy @ h:mma'}}</div>
+                        </div>
+                        <div class="row">{{comment.comment}}</div>
+                    </ion-item>
+                </ion-list>
+            </div>
+
+        </div>
+        <div ng-hide="moreMessagesScroll" class="feedend">You are at the end of the feed</div>
+        <ion-infinite-scroll ng-if="moreMessagesScroll" immediate-check="false"
+                             on-infinite="loadMore()" distance="1%"> </ion-infinite-scroll>
+    </ion-content>
+</ion-view>
+
+<script id="templates/popover.html" type="text/ng-template">
+    <ion-popover-view>
+        <ion-content>
+            <div class="list">
+                <!-- <a class="item" ng-if="(followOption == false && postInfo.user.user_id != myUid)"
+                   ng-click="followUser(postInfo.user.user_id)">
+                    Follow
+                </a>
+                <a class="item" ng-if="(followOption == true && postInfo.user.user_id != myUid)"
+                   ng-click="unfollowUser(postInfo.user.user_id)">
+                    Unfollow
+                </a> -->
+                <a class="item" ng-if="postInfo.user.user_id == myUid" ng-click="deletePost(postInfo)">
+                    Delete
+                </a>
+                <a class="item" ng-if="postInfo.user.user_id != myUid" ng-click="spamPost(postInfo)">
+                    Mark as spam
+                </a>
+            </div>
+        </ion-content>
+    </ion-popover-view>
+</script>

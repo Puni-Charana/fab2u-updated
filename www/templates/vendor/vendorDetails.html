@@ -1,0 +1,159 @@
+<ion-view class="vendorDetails">
+	<ion-content>
+		<div class="vendorImg">
+			<!--<img ng-src ="{{vendor_detail.images.main.url|| 'img/vendorImage.jpeg'}}">-->
+			<img ng-show="!vendor_detail.images.main.url" ng-src ="{{'img/vendorImage.jpeg'}}">
+			<img ng-show="vendor_detail.images.main.url" ng-src ="{{'http://1272343129.rsc.cdn77.org/fab2u/vendors/'+location.cityId+'/'+vendorId+
+			'/main/'+vendor_detail.images.main.url+'-s.jpg'}}">
+			<div class="ratingNcategory">
+				<div class="rating">
+					<span ng-repeat="counter in starrating(vendor_detail.rating) track by $index" class="trueRating">&#9733</span>
+				    <span ng-repeat="counter in starrating(5-vendor_detail.rating) track by $index" class="remRating">&#9733</span>
+			    </div>
+			    <div class="category capitalize">
+			    	{{vendor_detail.type}}
+			    </div>
+			</div>
+					<a class="icon ion-android-call vendorContact" ng-href="tel: 01244384167"></a>
+			<div class="backButton icon ion-chevron-left" ng-click="vendorMenu()"></div>
+			<div class="nameNlandmark">
+				<h4>{{vendor_detail.vendorName}}</h4>
+				<p>{{vendor_detail.address.landmark}}</p>
+			</div>
+			<div class="likeOption button" style="background-color: grey;" ng-click="likeVendor()" ng-disabled="liked">
+				<i class="icon ion-ios-heart" ng-class="liked?'likedHeart': 'normalHeart'"></i>
+			</div>
+			<div class="row" id="tabS">
+				<div class="col col-30 tabA" ng-click="changeSlide(0)" ng-class="currentValue==0? 'tabB':'tabA'">
+					<i class="icon ion-eye"></i>
+					<p>Overview</p>
+				</div>
+				<div class="col col-30 tabA" ng-click="changeSlide(1)" ng-class="currentValue==1? 'tabB':'tabA'">
+					<i class="icon ion-image"></i>
+					<p>Photos</p>
+				</div>
+				<div class="col col-30 tabA" ng-click="changeSlide(2)" ng-class="currentValue==2? 'tabB':'tabA'">
+					<i class="icon ion-ios-star"></i>
+					<p>Reviews</p>
+				</div>
+			</div>
+		</div>
+		<ion-slide-box on-slide-changed="slideHasChanged($index)" id="tabsSlider" delegate-handle="vendorMainDetails">
+			<ion-slide>
+			    <div class="mapImg">
+			    	<img src ="img/mapImage.jpg">
+			    	<div class="row addressNmap">
+			    		<div class="col col-90 address">
+			    			<p>{{vendor_detail.address.address1}},{{vendor_detail.address.address2}}</p>
+			    		</div>
+			    		<div class="col col-10 map">
+			    			<div class="icon ion-ios-location mapButton"
+								 ng-click="open_map(vendor_detail.address.latitude,vendor_detail.address.longitude,vendor_detail.address.address1,vendor_detail.address.address2,vendor_detail.vendorName)">
+			    			</div>
+			    		</div>
+			    	</div>
+			    </div>
+			    <div class="row amenities">
+			    	<div class="col col-15" ng-class="vendor_detail.amenities.card?'available':'notAvailable'">
+			    		<i class="icon ion-card"></i>
+			    		<p>Card</p>
+			    	</div>
+			    	<div class="col col-15" ng-class="vendor_detail.amenities.ac?'available':'notAvailable'">
+			    		<i class="icon ion-laptop"></i>
+			    		<p>AC</p>
+			    	</div>
+			    	<div class="col col-15" ng-class="vendor_detail.amenities.parking?'available':'notAvailable'">
+			    		<i class="icon ion-android-car"></i>
+			    		<p>Parking</p>
+			    	</div>
+			    	<div class="col col-15" ng-class="vendor_detail.amenities.wifi?'available':'notAvailable'">
+			    		<i class="icon ion-wifi"></i>
+			    		<p>Wifi</p>
+			    	</div>
+			    	<div class="col col-15"
+						 ng-class="dist?'available':'notAvailable'">
+			    		<i class="icon ion-ios-location-outline"></i>
+			    		<p>{{dist}} km</p>
+			    	</div>
+			    </div>
+			    <div class="timings" ng-click="showVendorTiming(vendor_detail.workingHours)">
+			    	<div class="showTimings row">
+			    		<div class="col col-20 clockIcon">
+			    			<i class="icon ion-clock"></i>
+			    		</div>
+			    		<div class="col col-60 workTime">
+			    			WORKING HOURS
+			    			<p ng-show="today_end_time">Today open till {{today_end_time | date:"h:mma"}}</p>
+			    		</div>
+			    		<div class="col col-20 toggleIcon">
+			    			<i ng-class="!more? 'ion-android-add':'ion-android-remove'"></i>
+			    		</div>
+			    	</div>
+			    	<ion-list ng-show="more">
+			    		<ion-item ng-repeat="item in days" class="timingDetail capitalize">
+			    			<span class="align-left">{{item.name}}</span>
+			    			<span class="align-right" ng-repeat="slots in item.Times">
+									{{slots.start | date:"h:mma"}} - {{slots.end | date:"h:mma"}}&nbsp;&nbsp;
+							</span>
+			    		</ion-item>
+			    	</ion-list>
+			    </div>
+			</ion-slide>
+			<ion-slide>
+			    <div class="gallery">
+			    	<div class="row allImages" ng-repeat="image in images" ng-if="$index % 2 === 0">
+				        <div class="col col-50" ng-if="$index < images.length" ng-click="goToSlide($index)">
+				            <img ng-src="{{images[$index].src}}" width="100%" />
+				        </div>
+				        <div class="col col-50" ng-if="$index + 1 < images.length" ng-click="goToSlide($index+1)">
+				            <img ng-src="{{images[$index + 1].src}}" width="100%" />
+				        </div>
+				        <!-- <div class="col col-33" ng-if="$index + 2 < images.length" ng-click="goToSlide($index+2)">
+				            <img ng-src="{{images[$index + 2].src}}" width="100%" />
+				        </div> -->
+				    </div>
+			    </div>
+			</ion-slide>
+			<ion-slide>
+			    <div class="Reviews" ng-show="dataLoaded">
+			    	<div class="card ratingCard" ng-repeat="review in review_info| orderBy: 'ReviewDate'" ng-show="reviews">
+			    		<div class="row">
+				    		<div class="col col-20 imgNname">
+				    			<img ng-src="{{review.image||'img/person.jpg'}}" class="profilePic">
+				    			<p class="profileName">{{review.name}}</p>
+				    		</div>
+				    		<div class="col col-80 reviewNRating">
+				    			<div class="rating1">
+									<div ng-repeat="counter in starrating(review.ReviewRating) track by $index" style="float:left;"><span class="trueRatingBox">&#9733</span></div>
+								    <div ng-repeat="counter in starrating(5-review.ReviewRating) track by $index" style="float:left;"><span class="remRatingBox">&#9733</span></div>
+								</div>
+								<div class="review">
+									<p>{{review.ReviewText}}</p>
+									<i ng-if="myUid == review.userId" class="icon ion-edit"
+									ng-click="editReview(review)"></i>
+
+								</div>
+				    		</div>
+			    		</div>
+			    	</div>
+					<div class="card text-center ratingCard" ng-hide="reviews">
+						No,review found
+					</div>
+			    </div>
+			</ion-slide>
+		</ion-slide-box>
+	</ion-content>
+	<ion-footer-bar class="footer">
+	    <div class="rateNow" ng-show="currentValue==2" ng-click="rateVendor()">
+	    	<i class="icon ion-android-star"></i>
+			<p>Review Now</p>
+		</div>
+	  	<div class="row newFooter" ng-show="menu_button">
+			<div class="col col-33" id="menu" ng-click="vendorMenu()">MENU</div>
+			<div class="col col-66" id="proceed" ng-click="cart()">PROCEED</div>
+		</div>
+		<div class="row newFooter" ng-hide="menu_button">
+			<div class="col" id="proceed" ng-click="cart()">PROCEED</div>
+		</div>
+	</ion-footer-bar>
+</ion-view>

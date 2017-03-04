@@ -1,0 +1,82 @@
+<ion-view id="vendor-services">
+    <ion-header-bar class="bar-light">
+        <div class="row">
+            <div class="col-10">
+                <a class="button icon-left ion-ios-arrow-left button-clear mgn" ng-click="backButton()"></a>
+            </div>
+            <div class="col-67">
+                <h1 class="title">{{vendor_detail.vendorName}}</h1>
+            </div>
+            <div class="col-20">
+                <div class="row cart-price">
+                    <div class="col currency">&#x20B9;</div>
+                    <div class="col price">{{total_customer}}</div>
+                </div>
+            </div>
+        </div>
+    </ion-header-bar> 
+    <ion-content>
+        <div ng-show="menuInfo">
+            <div class="services-n-fab">
+                <div class="services" ng-class="fabSelected? 'no-border':'with-border'" ng-click="selectMain(1)">
+                    SELECTED SERVICES
+                </div>
+                <div class="fab" ng-class="fabSelected? 'with-border':'no-border'" ng-click="selectMain(2)">FULL CATALOGUE</div>
+            </div>
+            <div class="padding" ng-repeat="(key,value) in menu1" style="width: 100%">
+                <div class="row item item-text-wrap list-heading"
+                     ng-repeat="(key1, value1) in selected_items"
+                     ng-if="key == value1.id" style="width:45%">{{value1.name}}
+                </div>
+                <div id="y.id " class="item item-text-wrap row" id="custom-servicelist" ng-repeat="y in value"
+                     ng-click="selectItem($index, y.menuItemId,y)"
+                     ng-class="selectedServices[y.menuItemId]?'selected-item':'normal'">
+                    <div class="col" ng-class="selectedServices[y.menuItemId]?'col-10 active-item':'hide'">
+                        <div class="active-color">&nbsp;</div>
+                    </div>
+
+                    <div class="col col-60 item-text-wrap p-15" ng-class="selectedServices[y.menuItemId]?'col-50':'normal col-60'">
+
+                        <span class="serviceList-gender"
+                              ng-show="y.male == true && y.female==undefined && y.kids == undefined">
+                                    {{y.menuItemName}}&nbsp;<span>(Male)</span>
+                                </span>
+                        <span class="serviceList-gender" ng-show="y.female == true && y.male==undefined && y.kids == undefined">
+                                    {{y.menuItemName}}&nbsp;<span>(Female)</span>
+                                </span>
+                        <span class="serviceList-gender" ng-show="y.female == true && y.male ==true && y.kids == undefined">
+                                    {{y.menuItemName}}&nbsp;<span>(Unisex)</span>
+                        </span>
+                        <span class="serviceList-gender" ng-show="y.female == undefined && y.male ==undefined && y.kids == true">
+                                    {{y.menuItemName}}&nbsp;<span>(Kids)</span>
+                        </span>
+                    </div>
+                    <div class="col col-40 p-15 text-center text-center price-view"
+                         ng-if="y.vendorPrice != y.customerPrice">
+                        <span class="striked-text serviceList-gender">&#x20B9;{{y.vendorPrice}} </span>
+
+                        <span class="serviceList-gender">
+                                   &#x20B9; {{y.customerPrice}}
+                         </span>
+                    </div>
+                    <div class="col col-40 p-15 price-view"
+                         ng-if="y.vendorPrice == y.customerPrice">
+                                <span class="serviceList-gender">
+                                   &#x20B9; {{y.customerPrice}}
+                                 </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+    <ion-footer-bar class="footer">
+        <div class="cartValue" ng-click="proceedButton()">
+            <i class="icon ion-ios-cart" style="font-size: 30px;"></i>
+            <p>{{cart_item}}</p>
+        </div>
+        <div class="row newFooter">
+            <div class="col col-33" id="overview" ng-click="overviewButton()">OVERVIEW</div>
+            <div class="col col-66" id="proceed" ng-click="proceedButton()">GO TO CART</div>
+        </div>
+    </ion-footer-bar>
+</ion-view>

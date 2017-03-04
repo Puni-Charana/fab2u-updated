@@ -1,0 +1,55 @@
+<ion-view class="confirmation" cache-view="false">
+    <ion-content scroll="false">
+        <button class="button button-dark button-small icon ion-chevron-left" id="backbutton"
+                ng-click="goBack()"></button>
+        <div class="card">
+            <div id="image"> <img src="img/wallet.png"></div>
+            <div class="row">
+               <div class="col-80 col-offset-10">
+            <div class="amount">
+                TOTAL AMOUNT &nbsp;
+                <span class="cus-price"
+                      ng-if="customer_price != total_original">
+                    <span class="tot-price">₹({{total_original}})</span>
+                </span>
+                ₹{{customer_price}}
+            </div>
+            <div  ng-show="paidFromWallet" class="amount">
+                <p>PAID FROM WALLET &nbsp; ₹{{paidFromWallet}}</p>
+            </div>
+            <div  ng-show="discountAmount" class="amount">
+                <p>DISCOUNT &nbsp; ₹{{discountAmount}}</p>
+            </div>
+            <div class="amount amount-payable">
+                <p>AMOUNT PAYABLE &nbsp; ₹{{amountPayable}}</p>
+            </div>
+                   </div>
+        </div>
+        </div>
+        <div ng-hide="promoCodeApplied" class="promo-code">
+            <div  align="center" ng-click="isOpen=!isOpen">
+                <p>Have a promo code? click here</p>
+            </div>
+            <div ng-hide="!isOpen" class="row" align="center">
+                <div class="col col-offset-10">
+                    <input type="text" ng-model="couponCode" placeholder="Enter promo code">
+
+                </div>
+                <div class="col">
+                    <button class="button button-dark" ng-click="addCoupon(couponCode)">Apply</button>
+                </div>
+                <br>
+            </div>
+        </div>
+        <div id="walletPayable" align="center" ng-show="hasWalletBalance">
+            <p>WALLET BALANCE &nbsp; ₹{{amount}}</p>
+        </div>
+        <div id="walletPayableAmount" align="center" ng-show="hasWalletBalance">
+            <ion-checkbox ng-model="isChecked" ng-click="toggleCheckbox()" id="walletCheckBox">
+            <p>&nbsp; PAY FROM WALLET &nbsp; ₹{{walletAmount}}</p></ion-checkbox>
+        </div>
+         </ion-content>
+        <ion-footer-bar class='bar bar-assertive custom-footer' ng-click="confirmedBooking()">
+            <div id="footerContent">CONFIRM APPOINTMENT</div>
+        </ion-footer-bar>
+</ion-view>

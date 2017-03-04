@@ -1,0 +1,185 @@
+/* Empty. Add your own CSS if you like */
+
+.appointment .custom-bar {
+	background-color: #404040 !important;
+}
+.appointment .footer_text{
+	font-size: 16px !important;
+	line-height: 35px !important;
+	text-align: center;
+	color: #FFFFFF;
+	margin-top: 5px;
+}
+.appointment .custom-title {
+	background-color: #404040 !important;
+}
+.selected_slot{
+	color: #FF8385 !important;
+}
+.not_selected_slot{
+	color: #666;
+}
+.appointment .custom-card {
+	border-radius: 10px;
+	padding-top:10px;
+	padding-bottom: 10px;
+	background-color: #ffffff !important;
+	text-align: center;
+}
+
+.appointment .custom-col {
+	padding-top: 55px;
+}
+.appointment .custom-col i{
+	font-size: 25px;
+	color: #FFFFFF;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+.appointment .custom-col p{
+	font-size: 16px;
+	color: #ffffff;
+}
+.appointment .scroll-bar-indicator {
+	display: none;
+}
+
+.appointment .date {
+	font-size: 35px;
+	font-weight: lighter;
+	font-color: #000000;
+	display:block;
+	padding: 10px
+}
+
+.appointment .month {
+	display:block;
+	font-size: 17px;
+	font-color: #000000;
+	margin:-5px
+}
+.appointment .day{
+	font-size: 12px;
+}
+
+.appointment .col.col-33 {
+	text-align: center
+}
+
+.appointment .custom-footer {
+
+	background-color: #FF8385;
+
+}
+
+.appointment .custom-row {
+	margin-top:45px;
+	margin-bottom: -10px;
+	background-color: rgb(128,128,128);
+}
+
+.appointment .custom-divider {
+	border-width: 1px;
+    border-style: solid;
+    width: calc(25% + 2px);
+    font-size: 10px;
+    float:left;
+    text-align:center;
+    border-top: none;
+	border-bottom: none;
+	background-color: #F5F5F5;
+	padding-top: 15px;
+	padding-bottom:9px;
+}
+
+.appointment .scroll-bar {
+	width: 25%;
+	float: left;
+}
+
+.appointment .custom-item {
+	border-top: none;
+	border-bottom: none;
+	background-color: #F5F5F5;
+}
+
+.appointment .time-button {
+	border-bottom: 1px solid #aaaaaa;
+	margin-right:8px;
+	margin-left: 8px;
+	text-align: center;
+	font-size: 12px;
+	font-weight: lighter;
+	color: #445 !important;
+}
+
+.item-divider {
+	border-top:none;
+	border-bottom: none;
+	border-right: 50%;
+}
+
+.appointment .selected-time {
+	font-weight:bold;
+	border-bottom: 4px solid #38E1ED;
+	border-bottom-left-radius: -5px;
+	border-bottom-right-radius: -5px;
+}
+
+.appointment .disabled-time-button {
+	  opacity: 0.35;
+}
+
+.appointment .bottom-screen {
+	background-color: #F5F5F5;
+	width: 100%;
+}
+
+.appointment .custom-icon {
+	font-size:30px;
+}
+
+.appointment .time-interval {
+	display: block;
+	font-size: 10px;
+	color:#444;
+}
+
+.appointment .fix-bar {
+	width:auto; 
+	height: 756px;
+}
+
+.appointment {
+	background-color:#F5F5F5;
+}
+
+
+.time-disabled{
+	color:#ccc;
+}
+
+.time-enabled{
+	color:#000;
+}
+
+.scroll-view{
+	width: 25%;
+	float:left;
+}
+
+.bottom-widget{
+	position: fixed;
+	bottom: 44px;
+	text-align: center;
+	width:100%;
+	background: #ccc;
+}
+.scroll-view .list {
+	position: relative;
+	padding-top: 1px;
+	padding-bottom: 1px;
+	padding-left: 0;
+	margin-bottom: 20px;
+	padding-bottom: 100px;
+}

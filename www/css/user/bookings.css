@@ -1,0 +1,112 @@
+.bookings .main-cont{
+      height:170px;
+      background:  url('../../img/vendorImage.jpeg');
+      width:95%;
+      margin: 2% auto;
+      background-size: cover;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+    }
+
+    .bookings .first-cont{
+      width:50%;
+      height:100%;
+      display: inline-block;
+      float: left;
+      padding-bottom: 10px;
+    }
+
+    .bookings .second-cont{
+      width:50%;
+      background-color:rgba(0, 0, 0, 0.5);
+      height:100%;
+      display: inline-block;
+      text-align: center;
+      border-top-right-radius: 10px;
+      padding-bottom: 10px;
+    }
+
+    .bookings .myButtonsDiv {
+        width: 95%;
+        margin-left: 2.5%; 
+        margin-top:-30px; 
+        border-bottom-left-radius: 10px; 
+        border-bottom-right-radius: 10px;
+    }
+   .bookings .myButtonsDiv .button1{
+       min-height: 44px !important;
+       max-height: 44px !important;
+    }
+   .bookings .myButtonsDiv .button2{
+       min-height: 44px !important;
+       max-height: 44px !important;
+   }
+
+.bookings #salon{
+      margin-top: 10px;
+      color:#fff;
+      font-size: 1em;
+      font-weight: 700;
+      padding-left: 1.5px;
+      padding-right: 1.5px;
+    }
+
+    .bookings #landmark {
+      margin-top: 2px;
+      color: white;
+      font-size: 1em;
+    }
+    .bookings #booking{
+       margin: 3px auto;
+       color: cyan;
+    }
+
+    .bookings #amount {
+      border-radius: 5px; 
+      border: 1px solid cyan; 
+      width: 80%; 
+      margin: auto;
+      color: white;
+      margin-bottom: 4px;
+      font-size: 0.85em;
+    }
+
+    .bookings #time {
+      float: left;
+       margin:auto; 
+       padding-left: 20px; 
+       color: white;
+       font-size: 13px;
+    }
+
+    .bookings #date {
+      font-size: 13px;
+      float: right;
+     margin:auto; 
+     padding-right: 20px;
+      color: white;   
+    }
+
+    .bookings #cancel {
+      border-bottom-left-radius: 5px;
+      background-color:#FF8386;
+      color:#fff;
+
+    }
+
+    .bookings #details {
+      border-bottom-right-radius: 5px;
+      background-color:#0DD1D1;
+      color:#fff;
+    }
+    .bookings .title {
+      text-align: center;
+    }
+
+    .bookings #calendar {
+      font-size: 1.7em;
+    }
+
+    .bookings #clock {
+      font-size: 1.7em;
+    }

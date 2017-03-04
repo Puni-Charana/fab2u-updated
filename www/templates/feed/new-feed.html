@@ -1,0 +1,23 @@
+<ion-view class="new-feed" cache-view="false">
+    <ion-header-bar align-title="center" class="bar-light" title="Profile" ng-click="goBack()">
+        <a class="pdl5"><img class="imgiconall" src="img/home/nleft.png"></a>
+        <h1 class="title">Create New Feed</h1>
+    </ion-header-bar>
+    <ion-content class="has-header" style="padding-top: 20px">
+        <div ng-show="show && crop_image" style="width: 100%; height: 350px;">
+            <div id="image-preview">
+            </div>
+        </div>
+        <div style="width: 300px; height: auto; margin:0 auto; padding-bottom: 10px;" ng-show="!crop_image" id="no-crop">
+            <img ng-src="{{nocropimage}}" style="width: 100%;">
+        </div>
+        <div style="text-align: center; margin-top: 15px;">
+            <h4 ng-show="!show">Select an option!</h4>
+            <button class="button button-balanced icon ion-camera" ng-click="camera()"></button>
+            <button class="button button-balanced icon ion-images" ng-click="gallery()"></button>
+            <button class="button button-balanced icon ion-refresh" ng-show="show && crop_image" ng-click="rotate()"></button>
+            <button ng-class="crop_image?'ion-arrow-expand':'ion-crop'" class="button button-balanced" ng-show="show" ng-click="cropOption()"></button>
+            <button class="button button-balanced" ng-show="show" ng-click="next()">Next</button>
+        </div>
+    </ion-content>
+</ion-view>

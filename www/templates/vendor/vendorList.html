@@ -1,0 +1,85 @@
+<ion-view class="vendorList">
+    <div class="tabs tabs-icon-top col">
+        <a class="tab-item first" ng-click="open_filter()">
+            <i class="icon ion-funnel"></i>
+            FILTER
+        </a>
+        <a class="tab-item second" ng-click="popover.show($event)">
+            <i class="icon ion-stats-bars"></i>
+            SORT BY
+        </a>
+    </div>
+    <!-- <ion-header-bar class="m-navColor">
+        <a class="button icon-left ion-chevron-left button-clear"  ng-click="backButton()"></a>
+        <h1 class="title">Select Vendors</h1>
+    </ion-header-bar> -->
+    <ion-header-bar align-title="center" class="bar-light">        
+      <a class="pdl5" ng-click="backButton()"><img class="imgiconall" src="img/home/nleft.png"></a>        
+    <h2 class="title">Select Vendors</h2>
+    </ion-header-bar>
+    <ion-content>
+        <div class="male-female">
+            <div class="female" ng-class="genSelected? 'no-border':'with-border'"
+                 ng-click="toggleColor(2)">FEMALE
+            </div>
+            <div class="fab" ng-class="genSelected? 'with-border':'no-border'"
+                 ng-click="toggleColor(1)">MALE</div>
+        </div>
+        <div class="card m-5 fab_card" ng-show="bindedVendors.length !='0'"
+             ng-repeat="vendor in bindedVendors| orderBy : sortValue |limitTo:limit">
+            <div class="row" ng-click="vendor_menu(vendor.vendorId)">
+                <div class="col-33 image_display_1">
+                    <!--<img ng-src="{{vendor.mainImage || 'img/vendorImage.jpeg'}}" class="pkg-img">-->
+                    <img ng-show="!vendor.mainImage" ng-src="{{'img/vendorImage.jpeg'}}" class="pkg-img">
+                    <img ng-show="vendor.mainImage" ng-src="{{'http://1272343129.rsc.cdn77.org/fab2u/vendors/'+cityId+'/'+vendor.vendorId+'/main/'+vendor.mainImage+'-xs.jpg'}}" class="pkg-img">
+                </div>
+                <div id="part2" class="col-67">
+                    <div class="row" style="line-height: 0px;">
+                        <div class="col-50">
+                            <p id="f_13">
+                                <i class="icon ion-ios-location c-location-icon"
+                                   ng-click="open_map(vendor.address.latitude,vendor.address.longitude,vendor.address.address1,vendor.address.address2,vendor.vendorName)">
+                                </i>{{vendor.distance| number : 2}} Km
+                            </p>&nbsp;
+                        </div>
+                        <div class="col-50" ng-click="vendor_menu(vendor.vendorId)">
+                            <p id="vendor_type">{{vendor.vendorType}}</p>
+                        </div>
+                    </div>
+                    <div class="row" >
+                        <p style=" color: #12BABA; font-size: 14px;font-weight: 600;" ng-if="vendor.discount.length>0">
+                         {{vendor.discount}}
+                        </p>
+                    </div>
+                    <div class="row" ng-click="vendor_menu(vendor.vendorId)">
+                        <div class="col">
+                            <p id="f_15">{{vendor.vendorName}}</p>
+                            <p id="land_mark">{{vendor.address.landmark}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div ng-hide="!isDisabled" class="padding text-center">You are at the end of the vendor List</div>
+        <ion-infinite-scroll on-infinite="loadMore()" distance="1%"
+                             ng-if="(!isDisabled)&&(bindedVendors.length !='0')">
+        </ion-infinite-scroll>
+    </ion-content>
+    <button class="button button-assertive fab-button" ng-click="multipleAddressMapView()">
+        <i class="icon ion-ios-location"></i>
+    </button>
+    <script id="templates/popover.html" type="text/ng-template">
+        <ion-popover-view>
+            <ion-content>
+                <div class="list" ng-click="closePopover()">
+                    <div class="item" ng-click="sortVendors('distance')">
+                        Distance
+                    </div>
+                    <div class="item" ng-click="sortVendors('vendorName')">
+                        Name
+                    </div>
+                </div>
+            </ion-content>
+        </ion-popover-view>
+    </script>
+</ion-view>

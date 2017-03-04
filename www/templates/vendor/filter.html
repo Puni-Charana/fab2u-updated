@@ -1,0 +1,59 @@
+<ion-modal-view  class="vendorList">
+    <ion-header-bar class="bar-light">
+        <a href="" class="pdl5" ng-click="close_filter()"><img class="imgiconall" src="img/home/nleft.png"></a>
+        <h1 class="title">FILTER</h1>
+        <div id="toggleButton">
+           <i class="button icon-right ion-refresh button-clear" ng-click="refresh()"></i>
+        </div>
+    </ion-header-bar>
+    <ion-content>
+        <div class="filter_row">
+            Salon Type
+        </div>
+        <div class="filter_row2">
+            <center>
+                <div class="colmn">
+                    <input type="button" class="type_btn" value="SILVER" ng-model="type"
+                          ng-class="active_button1?'activeButton':'not_activeButton'" ng-click="typeFn('silver')">
+                    <input type="button" class="type_btn" value="GOLD" ng-model="type"
+                           ng-class="active_button2?'activeButton':'not_activeButton'" ng-click="typeFn('gold')">
+                    <input type="button" class="type_btn" value="PLATINUM" ng-model="type"
+                           ng-class="active_button3?'activeButton':'not_activeButton'" ng-click="typeFn('platinum')">
+                </div>
+            </center>
+        </div>
+        <div class="filter_row">
+            Advanced Filter
+        </div>
+        <div class="filter_row2">
+            <div class="loc" ng-click="open_location()">
+                <p class="pull-left text-bold">Locations
+                    <i class="icon ion-chevron-right"></i>
+                </p>
+                <p class="selectedLocality">
+                   <span ng-repeat="(key,value) in locationName">{{key}}</span>
+                </p>
+            </div>
+        </div>
+        <div class="filter_row">
+            Amenities
+        </div>
+        <div class="filter_row2">
+            <center>
+                <div class="row amenities">
+                    <div class="col col-25" ng-repeat="amenity in amenities" ng-model="ame_type"
+                         ng-click="amenity_list(amenity)"
+                         ng-class="amenity.selected?'selected_amenity':'not_selected_amenity'">
+                        <i class="icon {{amenity.icon}}"></i>
+                        <p>{{amenity.name}}</p>
+                    </div>
+                </div>
+            </center>
+        </div>
+     </ion-content>
+    <ion-footer-bar class="bar custom-footer" align-title="center" ng-click="applyFilter()">
+        <h1 class="title footer_text">
+            APPLY
+        </h1>
+    </ion-footer-bar>
+</ion-modal-view>

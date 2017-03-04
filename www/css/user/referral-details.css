@@ -1,0 +1,121 @@
+.referral-details .referral-footer{
+	background-color:#ff8386;
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
+	width:98%;
+	margin:0 1%;
+}
+
+.referral-details .referral-footer h1 {
+	color:#fff;
+}
+
+.referral-details .referral-footer i{
+	color:#fff;
+	font-size:2em;
+	margin-left:80%;
+	margin-top:4px;
+}
+.referral-details ion-scroll {
+	height: auto;
+	max-height: 250px;
+	width: 100%;
+}
+.referral-details .referred-title {
+	text-align:center;
+}
+
+.referral-details .scroll{
+	height:100%;
+}
+
+
+.referral-details ion-scroll{
+	height:auto;
+	max-height:250px;
+}
+
+.referral-details{
+	background: url(../../img/background.jpg) 100% 100%;
+}
+
+.referral-details .all-details{
+	width: 96%;
+    height: 96%;
+    margin: 3% 2%;
+    padding-top: 8%;
+    background-color: #e0e0dc;
+    border-radius: 8px;
+    opacity: 0.6;
+}
+
+.referral-details .referred-detail{
+	width: 94%;
+    margin: 0% 3%;
+    border-radius: 10px;
+    background-color: #494949;
+    padding-bottom: 10px;
+}
+
+.referral-details .referred-title {
+    background-color: #727272;
+    text-align: center;
+    padding: 5px;
+    height: 50px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom: 3px solid #494949;
+}
+
+.referral-details .referred-title h4 {
+	 color: #fff; 
+}
+
+.referral-details .name {
+	background-color:#3e3e3e;
+	font-size: 13px;
+	color: #fff;
+}
+
+.referral-details .code {
+	background-color:#3e3e3e;
+	font-size: 13px;
+	color: #fff;
+}
+
+.referral-details .date {
+	background-color:#3e3e3e;
+	font-size: 13px;
+	color: #fff;
+}
+
+
+.referral-details .referred-from-title{
+	background-color: #727272;
+    text-align: center;
+    padding: 5px;
+    height: 50px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom: 3px solid #494949;
+    margin: 5px 0px 0px 0px;
+}
+
+.referral-details .referred-from-title h4 {
+	 color: #fff; 
+}
+
+.referral-details .referred-from-detail{
+	color: #fff;
+    height: auto;
+    min-height: 40px;
+    /* margin: -8px 0px 0px 0px; */
+    padding: 0px;
+}
+
+.referral-details .all-referrals {
+	background-color:#494949;
+	color:#fff;
+	font-size:1em;
+	border-bottom: 1px solid #737373;
+}

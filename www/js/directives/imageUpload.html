@@ -1,0 +1,34 @@
+<div class="user-c-g">
+    <div class="box">
+        <!--<input type="file" id="img-file" />-->
+       
+        <div class="col">    
+            <a class="follow-btn" ng-click="cameraUpload()">Camera</a>
+        </div>
+        <div class="col">
+            <a class="follow-btn" ng-click="galleryUpload()">Gallery</a>
+        </div>
+        <!-- <div class="col">
+            <input type="file" id="img-file" />
+        </div> -->
+        <!--<label for="img-file">-->
+            <!--<img src="img/upload.png" />-->
+            <!--<span id="file-name">Upload {{imageType}} image</span></label>-->
+    </div>
+    <div id="crop-dialog" title="Please Crop Image">
+        <div id="crop-cont"></div>
+        <div class="popup-footer">
+            <input type="button" value="crop" class="button button-positive" id="cropImage" />
+            <input type="button" value="cancel" id="cancelCrop" class="button button-light" />
+        </div>
+    </div>
+    <div id="upload-dialog" title="Upload Image" >
+        <div class="canvas-image">
+            <canvas id="img-canvas" crossOrigin="Anonymous"></canvas>
+        </div>
+        <div class="popup-footer text-right">
+            <input type="button" value="upload" class="button button-positive" id="uploadImage" />
+            <input type="button" value="cancel" id="cancelUpload" class="button button-light" />
+        </div>
+    </div>
+</div>

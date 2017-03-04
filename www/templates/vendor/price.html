@@ -1,0 +1,12 @@
+<ion-modal-view class="modal-view third_modal">
+    <ion-header-bar>
+        <h1 class="title modal-title">PRICE RANGE</h1>
+        <i class="icon ion-close locality_icon pull-right" ng-click="close_price()"></i>
+    </ion-header-bar>
+    <ion-content class="padding">
+        <ion-list ng-repeat="price in price_list">
+            <ion-radio ng-model="isChecked" ng-click="price_selected(price)">
+                {{price.min_price}} to {{price.max_price}}</ion-radio>
+        </ion-list>
+    </ion-content>
+</ion-modal-view>

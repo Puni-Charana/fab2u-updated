@@ -1,0 +1,12 @@
+<ion-modal-view class="modal-view second_modal">
+    <ion-header-bar>
+        <h1 class=" modal-title locality_title">LOCALITY</h1>
+       <i class="icon ion-checkmark locality_icon pull-right" ng-click="close_location()"></i>
+    </ion-header-bar>
+    <ion-content class="padding">
+        <ion-list ng-repeat="location in location_detail">
+            <ion-checkbox ng-model="isChecked" ng-click="location_selected(location.locationId,isChecked,location)">
+                {{location.locationName}}</ion-checkbox>
+        </ion-list>
+    </ion-content>
+</ion-modal-view>

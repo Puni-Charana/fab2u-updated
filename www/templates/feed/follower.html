@@ -1,0 +1,20 @@
+<ion-view class="fabFeed" cache-view="false">
+    <ion-header-bar align-title="center" class="bar-light" title="FOLLOWERS" ng-click="goBack()">
+        <a class="pdl5 "><img class="imgiconall" src="img/home/listn.png"></a>
+        <h1 class="title">FOLLOWERS</h1>
+    </ion-header-bar>
+    <ion-content>
+        <div class="list" ng-show="followerUserDetail">
+            <a class="item item-avatar list_item" ng-click="viewPosts(followerDetail.userId,followerDetail.postNum)"
+               ng-repeat="followerDetail in followerUserDetail">
+                <img ng-src="{{followerDetail.photoUrl ||'img/person.jpg'}}">
+                <span ng-if="followerDetail.postNum>0">View Posts</span>
+                <h2>{{followerDetail.name}}</h2>
+                <p>Post:{{followerDetail.postNum || 0}}</p>
+            </a>
+        </div>
+        <div class="list text-center" ng-show="msg">
+            <p>You are not having any followers yet!</p>
+        </div>
+    </ion-content>
+</ion-view>

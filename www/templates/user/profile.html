@@ -1,0 +1,130 @@
+<!--<ion-view class="userProfile" cache-view="false">-->
+   <!--<ion-header-bar class="bar-dark" title="Profile">-->
+      <!--<a class="button icon ion-chevron-left button-clear" ng-click="goBack()"></a>-->
+      <!--<h1 class="title">My Profile</h1>-->
+   <!--</ion-header-bar>-->
+   <!--<ion-content class="has-header">-->
+      <!--<div class="user-info">-->
+         <!--<div class="center">-->
+            <!--<img ng-src="{{userDetails.photoUrl || 'img/person.jpg'}}" ng-click="showUploadOptions = !showUploadOptions"-->
+                 <!--width="100" height="100" class="profile-pic" id="profile-pic"/>-->
+            <!--<i class="icon ion-edit" ng-click="showUploadOptions = !showUploadOptions"></i>-->
+            <!--<div class="row" ng-show="showUploadOptions">-->
+               <!--<div class="col">-->
+                  <!--<a class="follow-btn" ng-click="cameraUpload()">Camera</a>-->
+               <!--</div>-->
+               <!--<div class="col">-->
+                  <!--<a class="follow-btn" ng-click="galleryUpload()">Gallery</a>-->
+               <!--</div>-->
+            <!--</div>-->
+            <!--&lt;!&ndash; <canvas id="identicon" width="100" height="100" class="profile-pic"></canvas> &ndash;&gt;-->
+         <!--</div>-->
+         <!--<div class="center user-name">-->
+            <!--&lt;!&ndash; <button class="button" ng-click="testFunc()">test</button> &ndash;&gt;-->
+            <!--<div class="row profile-row">-->
+               <!--<div class="col col-key">-->
+                  <!--Name-->
+               <!--</div>-->
+               <!--<div class="col col-value">-->
+                  <!--{{userDetails.name}}-->
+               <!--</div>-->
+            <!--</div>-->
+            <!--<div class="row">-->
+               <!--<div class="col col-key">-->
+                  <!--Email-->
+               <!--</div>-->
+               <!--<div class="col col-value">-->
+                  <!--{{userDetails.email.userEmail}}-->
+               <!--</div>-->
+            <!--</div>-->
+            <!--<div class="row">-->
+               <!--<div class="col col-key">-->
+                  <!--Phone No.-->
+               <!--</div>-->
+               <!--<div class="col col-value">-->
+                  <!--{{userDetails.mobile.mobileNum}}-->
+               <!--</div>-->
+            <!--</div>-->
+            <!--<div class="row">-->
+               <!--<div class="col col-key">-->
+                  <!--Referral Code-->
+               <!--</div>-->
+               <!--<div class="col col-value">-->
+                  <!--{{userDetails.myReferralCode}}-->
+               <!--</div>-->
+            <!--</div>-->
+         <!--</div>-->
+      <!--</div>-->
+   <!--</ion-content>-->
+<!--</ion-view>-->
+
+<ion-view class="userProfile" cache-view="false">
+   <ion-header-bar class="bar-dark" title="Profile">
+      <a class="button icon ion-chevron-left button-clear" ng-click="goBack()"></a>
+      <h1 class="title">My Profile</h1>
+   </ion-header-bar>
+   <ion-content class="has-header">
+      <div class="user-info">
+         <div class="center">
+            <img ng-src="{{userDetails.photoUrl || 'img/person.jpg'}}" width="100" height="100" class="profile-pic" id="profile-pic" ng-click="showUploadOptions = !showUploadOptions"/>
+            <div class="row" ng-show="showUploadOptions">
+               <div class="col">
+                  <a class="follow-btn" ng-click="cameraUpload()">Camera</a>
+               </div>
+               <div class="col">
+                  <a class="follow-btn" ng-click="galleryUpload()">Gallery</a>
+               </div>
+            </div>
+            <!-- <canvas id="identicon" width="100" height="100" class="profile-pic"></canvas> -->
+         </div>
+         <div class="center user-name">
+            <!-- <button class="button" ng-click="testFunc()">test</button> -->
+            <div class="row profile-row">
+               <div class="col col-key">
+                  Name
+               </div>
+               <div class="col col-value">
+                  {{userDetails.name}}
+               </div>
+            </div>
+            <div class="row">
+               <div class="col col-key">
+                  Email
+               </div>
+               <div class="col col-value">
+                  {{userDetails.email.userEmail}}
+               </div>
+            </div>
+            <div class="row">
+               <div class="col col-key">
+                  Phone No.
+               </div>
+               <div class="col col-value">
+                  {{userDetails.mobile.mobileNum}}
+               </div>
+            </div>
+            <div class="row">
+               <div class="col col-key">
+                  Referral Code
+               </div>
+               <div class="col col-value">
+                  {{userDetails.myReferralCode}}
+               </div>
+            </div>
+         </div>
+         <!-- <div class="otp row" ng-show="showOTPfield">
+            <div class="col col-75">
+               <label class="item item-input item-stacked-label">
+                  <input type="number" ng-model="newOtp.code" placeholder="Enter verification code">
+               </label>
+            </div>
+            <div class="col col-25 otpButton" ng-click="verifyOTP()">
+               <span>Verify</span>
+            </div>
+         </div> -->
+      </div>
+   </ion-content>
+   <!-- <ion-footer-bar class="bar bar-calm" align-title="center" ng-show="showMobileVerify" ng-click="sendVerification()">
+      <h1 class="title">Verify Mobile Number</h1>
+   </ion-footer-bar> -->
+</ion-view>

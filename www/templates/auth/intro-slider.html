@@ -1,0 +1,54 @@
+<ion-view cache-view="false">
+    <style>
+    .no-pager .slider-pager {
+        display: none;
+    }
+    
+    .show-pager .slider-pager {
+        display: block;
+    }
+    </style>
+    <ion-content id="full-content-slider" scroll="false">
+        <ion-slide-box show-pager="true">
+            <ion-slide>
+                <ion-content>
+                    <div class="box background-white">
+                        <img ng-src="img/intro-slider/final1.png" align="middle">
+                    </div>
+                </ion-content>
+            </ion-slide>
+            <ion-slide>
+                <ion-content>
+                    <div class="box background-white">
+                        <img ng-src="img/intro-slider/final2.png" align="middle">
+                    </div>
+                </ion-content>
+            </ion-slide>
+            <ion-slide>
+                <ion-content>
+                    <div class="box background-white">
+                        <img ng-src="img/intro-slider/final3.png" align="middle">
+                    </div>
+                </ion-content>
+            </ion-slide>
+            <ion-slide>
+                <ion-content>
+                    <div class="box background-white">
+                        <img ng-src="img/intro-slider/final4.png" align="middle">
+                    </div>
+                </ion-content>
+            </ion-slide>
+        </ion-slide-box>
+    </ion-content>
+    <ion-footer-bar>
+        <div class="bar bar-footer bar-dark">
+            <button ng-click="skipSlide()" class="button button-clear pull-left padding-right">Skip</button>
+            <button ng-click="nextSlide($index)" class="button button-clear pull-right padding-right">Next</button>
+        </div>
+    </ion-footer-bar>
+    <script id="templates/loading.html" type="text/ng-template">
+        <ion-spinner class="light"></ion-spinner>
+        <br />
+        <span>Please wait...</span>
+    </script>
+</ion-view>

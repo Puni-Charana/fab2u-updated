@@ -1,0 +1,78 @@
+#side-menu .mainHeader {
+    background-color: #fff;
+    color: #444;
+}
+
+
+/*#side-menu .mainHeader .ion-navicon , .mainHeader .ion-ios-heart, .mainHeader .ion-android-search{
+	color:#fff;
+}*/
+
+
+/*#side-menu .mainHeader .ion-location {
+	color:#fff;
+}*/
+
+#side-menu .mainHeader .location {
+    font-size: 0.8em;
+}
+
+#side-menu .mainHeader .location .loc1 {
+    font-size: 0.8em;
+    display: block;
+    line-height: 10px;
+}
+
+#side-menu .mainHeader .location .break {
+    display: block;
+    line-height: 20px;
+    font-size: 0.9em;
+    font-weight: 600;
+}
+
+#side-menu div.title.title-left.header-item {
+    top: 10px;
+    left: 30px !important;
+}
+
+#side-menu .pink {
+    color: #ff8683;
+}
+
+#side-menu .side-menu-header {
+    background-color: #fff;
+}
+
+
+/*#side-menu #login-icon {
+	color: #ff8386;
+	padding: 0 8px 0 6px;
+}*/
+
+#side-menu .side-menu-header h1 {
+    color: #444;
+}
+
+.menu-left a.item-content {
+    line-height: 42px;
+    padding: 0;
+}
+
+.menu-left .item {
+    line-height: 45px;
+    padding: 5px 49px 5px 16px;
+}
+
+.menu-left .item img {
+    height: 25px;
+    width: 25px;
+    margin-top: 10px;
+    float: left;
+    margin-right: 10px;
+}
+
+.ilogin {
+    color: #ff8386;
+    padding: 0 8px 0 0px;
+    font-size: 22px;
+}

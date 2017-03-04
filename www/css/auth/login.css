@@ -1,0 +1,192 @@
+#loginform #formdetails {
+    margin-top: 20%;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+#loginform #pinkcolor {
+    color: #FF8385;
+}
+
+.pinkcolor {
+    background-color: #FF8385;
+    color: #fff;
+}
+
+#loginform #pinkbgcolor {
+    background-color: #FF8385;
+    margin-top: 35px;
+    color: #fff;
+}
+
+#loginform #formdetails #formerase {
+    font-size: 1.5em;
+    background: #FF8385;
+    height: 20px;
+    width: 20px;
+    margin: -18% 100% 0 100%;
+    color: white;
+}
+
+#loginform #formdetails #formborder1 {
+    border: none;
+    color: #FF8385;
+    border-bottom: solid 2px black;
+}
+
+#loginform #formdetails #formborder1 .spaceGap1 {
+    padding: 0 10px;
+}
+
+#loginform #formdetails #formborder2 {
+    border: none;
+    color: #FF8385;
+    border-bottom: solid 1px black;
+}
+
+#loginform #formdetails #formborder2 .spaceGap2 {
+    padding: 0 10px;
+}
+
+#loginform #formdetails #forgotpassword {
+    text-align: center;
+}
+
+#loginform .otherLoginOpts {
+    margin-top: 5px;
+}
+
+#loginform #formdetails p {
+    width: 100%;
+    font-size: 0.8em;
+    text-align: center;
+    border-bottom: 1px solid #000;
+    line-height: 0.1em;
+    margin: 10px 0 20px;
+}
+
+#loginform #formdetails p span {
+    background: #fff;
+    padding: 0 10px;
+}
+
+#loginform #social-icons {
+    font-size: 2em;
+    position: absolute;
+    left: 50%;
+    margin-top: -30px;
+    transform: translate(-50%, -50%);
+}
+
+#loginform #social-icons #hexagon1 {
+    color: white;
+    width: 25px;
+    height: 30px;
+    border-radius: 2px;
+    background: #3E5B99;
+    position: relative;
+    top: 100px;
+    left: -15px;
+    text-align: center;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+#loginform #social-icons #hexagon1:before {
+    content: "";
+    position: absolute;
+    border-radius: 2px;
+    top: -18px;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 26px solid transparent;
+    border-right: 26px solid transparent;
+    border-bottom: 18px solid #3E5B99;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+#loginform #social-icons #hexagon1:after {
+    content: "";
+    position: absolute;
+    border-radius: 2px;
+    bottom: -18px;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 26px solid transparent;
+    border-right: 26px solid transparent;
+    border-top: 18px solid #3E5B99;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+#loginform #social-icons #hexagon2 {
+    color: white;
+    width: 100px;
+    border-radius: 2px;
+    height: 30px;
+    background: #E53935;
+    position: relative;
+    top: 100px;
+    right: -15px;
+    text-align: center;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+#loginform #social-icons #hexagon2:before {
+    content: "";
+    position: absolute;
+    border-radius: 2px;
+    top: -18px;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 26px solid transparent;
+    border-right: 26px solid transparent;
+    border-bottom: 18px solid #E53935;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+#loginform #social-icons #hexagon2:after {
+    content: "";
+    position: absolute;
+    border-radius: 2px;
+    bottom: -18px;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 26px solid transparent;
+    border-right: 26px solid transparent;
+    border-top: 18px solid #E53935;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+#loginform #askforaccount {
+    font-size: 0.9em;
+    margin-top: 10%;
+    text-align: center;
+}
+

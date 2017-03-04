@@ -1,0 +1,20 @@
+<ion-view class="fabFeed" cache-view="false">
+    <ion-header-bar align-title="center" class="bar-light" title="FOLLOW" ng-click="goBack()">
+        <a class="pdl5"><img class="imgiconall" src="img/home/listn.png"></a>
+        <h1 class="title">FOLLOW</h1>
+    </ion-header-bar>
+    <ion-content>
+        <div class="list" ng-show="IfollowingUserDetail">
+            <a class="item item-avatar list_item" ng-click="viewPosts(followDetail.userId,followDetail.postNum)"
+               ng-repeat="followDetail in IfollowingUserDetail">
+                <img ng-src="{{followDetail.photoUrl ||'img/person.jpg'}}">
+                <span ng-if="followDetail.postNum>0">View Posts</span>
+                <h2>{{followDetail.name}}</h2>
+                <p>Post:{{followDetail.postNum || 0}}</p>
+            </a>
+        </div>
+        <div class="list text-center" ng-show="msg">
+            <p>You are not following anyone yet!</p>
+        </div>
+    </ion-content>
+</ion-view>

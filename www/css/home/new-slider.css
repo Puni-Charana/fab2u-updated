@@ -1,0 +1,172 @@
+#servicelistslider {
+	width: 100%;
+	height: 100%;
+}
+
+#servicelistslider #img-container {
+	width: 100%;
+	height: 250px;
+	padding: 0px;
+	position: relative;
+	background-color: #2E8B57;
+}
+
+#servicelistslider #img-container img {
+	width: 100%;
+	height: auto;
+	object-fit: cover;
+}
+
+#servicelistslider .backButton {
+	background-color:#fff;
+	position:absolute;
+	height:35px;
+	width:14%;
+	min-width: 30px;
+	max-width: 55px;
+	left:0%;
+	top:3%;
+	border-top-right-radius: 5em;
+	border-bottom-right-radius: 5em;
+	text-align:center;
+	padding-top:7px;
+	font-size:1.7em;
+}
+
+#servicelistslider .searchButton {
+	position:absolute;
+	height:35px;
+	width:35px;
+	right:5%;
+	top:3%;
+	text-align:center;
+	padding-top:5px;
+}
+
+#servicelistslider .searchButton i {
+	font-size:30px;
+	color:#FFF;
+}
+
+#servicelistslider #title {
+	position: absolute;
+	top: 30%;
+	left: 0%;
+	width: 100%;
+	text-align: center;
+}
+
+#servicelistslider #title h3 {
+	width: 70%;
+	margin: 0 auto;
+	border-top: 2px solid #FFFFFF;
+	border-bottom: 2px solid #FFFFFF;
+	color: #FFFFFF;
+}
+
+#servicelistslider #title p {
+	color: #FFFFFF;
+}
+
+#servicelistslider #scrollTabs {
+	width:100%;
+	margin-top:-80px;
+	background-color: #3D3D3D;
+}
+
+#servicelistslider #container {
+	width:500px;
+	height: 80px;
+	background-color: #3d3d3d;
+}
+
+#servicelistslider .tab {
+	width: auto;
+	height: 80px;
+	float: left;
+	text-align: center;
+	padding: 10px 20px;
+	cursor: pointer;
+	color: #ff8386;
+}
+
+#servicelistslider .tab i {
+	font-size: 2em;
+}
+
+#servicelistslider .active {
+	color: #FFFFFF;
+	background-color: #ff8386
+}
+
+#servicelistslider .moreButton {
+	position:absolute;
+	height:auto;
+	width:auto;
+	padding-right: 10px;
+	right:0;
+	margin-top: -66px;
+	color: #FFFFFF;
+	font-size: 25px;
+}
+
+#servicelistslider #slideBox {
+	width: 100%!important;
+	height: auto;
+	padding: 0px;
+	background-color: white;
+}
+
+#servicelistslider .diagonal {
+  border-top: 60px solid #ff8386;
+  border-left: 60px solid rgba(0, 0, 0, 0);
+  display: block;
+  height: 0;
+  width:5%;
+  float: right;
+  margin:-16px;
+}
+
+#servicelistslider .diagonal span{
+	position:absolute;
+	right:1%;top:-5%;
+}
+
+#servicelistslider .diagonal span i{
+	color:#FFF;
+	font-size:3em;
+}
+
+#servicelistslider .moreDownButton {
+	position:absolute;
+	height:35px;
+	width:35px;
+	right:2%;
+	bottom:10%;
+	background-color: #0dd1d1;
+	text-align:center;
+	border-radius: 50%;
+	padding-top:10px;
+	color: #FFFFFF;
+	font-size: 20px;
+}
+
+#servicelistslider .row {
+	padding:0px;
+}
+
+#servicelistslider .item {
+	height: 60px;
+}
+
+#servicelistslider #footer-bar {
+	border-top-right-radius: 7px;
+	border-top-left-radius: 7px;
+	width:97%!important;
+	margin:0 auto;
+	background-color:#ff8386;
+}
+
+#servicelistslider #footer-bar h1{
+	color: #FFFFFF;
+}

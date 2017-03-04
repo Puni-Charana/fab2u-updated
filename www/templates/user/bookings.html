@@ -1,0 +1,38 @@
+<ion-view class = "bookings">
+      <ion-header-bar class="bar-light">
+      <button class = "button-clear pdl5" ng-click="go_home()"><img class="imgiconall" src="img/home/nleft.png"></button>
+        <h1 class="title">MY BOOKINGS</h1>
+      <!--<button class = "button button-clear icon ion-ios-list-outline"></button>-->
+      </ion-header-bar>
+      
+      <ion-content ng-show="bookingsLoaded">
+          <div ng-hide="allBookings.length > 0">
+              Sorry, no bookings found!
+          </div>
+
+        <div ng-show="allBookings" ng-repeat ="booking in allBookings | orderBy : '-appointmentTime'">
+          <div class="main-cont">
+            <div class="first-cont">
+            <b ng-show="booking.userStatus == 'cancelled'">Cancelled</b>
+            <b ng-show="booking.userStatus == 'upComing'">Upcoming</b>
+            <b ng-show="booking.userStatus == 'notAvailed'">Not Availed</b>
+            <b ng-show="booking.userStatus == 'availed'">Availed</b>
+            </div>
+            <div class="second-cont">
+                 <div id = "salon">{{booking.vendorName}}{{booking.salonName}} </div>
+                <div id ="landmark" >{{booking.vendorLandmark}}</div>
+                <div id = "booking" >Booking ID {{booking.bookingId}}</div>
+                <div id = "amount" >Amount Payable {{booking.amountPayable}}</div>
+                <div id ="date" ><b><i class = "icon ion-calendar" id = "calendar"></i></b><br>{{booking.appointmentTime | date:'dd-MM-yyyy'}}</div>
+                <div id="time"  ><b><i class = "icon ion-clock" id = "clock" ></i></b><br>{{booking.appointmentTime | date:"h:mma"}}</div>
+            </div>
+          </div>
+          <div class = "button-bar myButtonsDiv">
+              <button class ="button button1" id="cancel" ng-click="bookingCancel(booking.bookingId)"
+                      ng-disabled="(booking.userStatus !='upComing')||(booking.appointmentTime<activeDate)">CANCEL</button>
+              <button class ="button button2" id="details" ng-click="bookingDetail(booking.bookingId)">VIEW DETAILS</button>
+          </div>
+        </div>
+ 
+      </ion-content>
+</ion-view>

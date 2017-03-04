@@ -1,0 +1,46 @@
+<ion-view class="referral-details">
+	<div class="bar bar-header bar-light">
+		<button class = "pdl5 button-clear" ng-click="goToRefer()"><img class="imgiconall" src="img/home/nleft.png"></button>
+	    <h1 class="title custom-title">REFER A FRIEND</h1>
+	</div>
+	<ion-content class = "has-footer has-header refer-content">
+		<div class="all-details">
+			<div class="referred-detail">
+                <div class="referred-from-title">
+					<h4>REFERRED FROM</h4>
+				</div>
+				<div class="referred-from-detail row">
+					<div class="col col-45 name">
+						{{referredByDetail.name}}
+					</div>
+					<div class="col col-25 code">
+						{{referredByDetail.myReferralCode}}
+					</div>
+					<div class="col col-30 date">
+						{{referredDate| date:'dd-MM-yyyy'}}
+					</div>
+				</div>
+				<div class="referred-title">
+					<h4>REFERRED TO</h4>
+				</div>
+				<ion-scroll  direction="y"  has-bouncing="false">
+					<div class="row all-referrals" ng-repeat="referral in referralDetails">
+						<div class="col col-45 name">
+							{{referral.userName}}
+						</div>
+						<div class="col col-25 code">
+							{{referral.userReferralCode}}
+						</div>
+						<div class="col col-30 date">
+							{{referral.joinDate| date:'dd-MM-yyyy'}}
+						</div>
+					</div>
+				</ion-scroll>
+			</div>
+		</div>
+	</ion-content>
+	<ion-footer-bar class="referral-footer" align-title="center" ng-click="referNearn()">
+	    <h1 class="title ">SHARE ON OTHERS</h1>
+	    <i class="icon ion-android-share-alt"></i>
+	</ion-footer-bar>
+</ion-view>

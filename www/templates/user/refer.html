@@ -1,0 +1,38 @@
+<ion-view class="refer">
+
+<ion-header-bar class="bar-light">
+      <button class = "pdl5 button-clear" ng-click="go_home()"><img class="imgiconall" src="img/home/nleft.png"></button>
+        <h1 class="title">REFER A FRIEND</h1>
+      <button class = "button button-clear icon ion-ios-list-outline" ng-click="showReferDetails()"></button>
+      </ion-header-bar>
+	<!-- <div class="bar bar-header bar-dark custom-bar">
+		<button class = "button button-clear icon ion-ios-arrow-left" ng-click="go_home()"></button>
+	    <h1 class="title custom-title">REFER A FRIEND</h1>
+	    <button class = "button button-clear icon ion-ios-list-outline" ng-click="showReferDetails()"></button>
+	</div> -->
+	<ion-content class = "has-footer has-header refer-content">
+		<div class="card custom-card">
+	    	<img class="image" src="img/refer.png"/>
+	    	<p class="referral-text">SHARE YOUR REFERRAL CODE</p>
+	    	<div class="referral-code">{{myReferralCode}}</div>
+		</div>
+
+		<div class="referral-description">
+			<p>Gift your friends Rs.25 and get Rs.25 for yourself too in the FAB2U Wallet.</p>
+		</div>
+		<div class="referral-description">
+			<p>(Amount is automatically credited to
+			your wallet once first booking is availed
+			by your friend)</p>
+		</div>
+	</ion-content>
+
+	<div class="bar bar-footer custom-footer container">
+	    <div class="left-half" ng-click="WhatsApp()">
+	      <p class = "footer-text">Share using Whatsapp  <i class = "ion-social-whatsapp-outline"></i></p>
+	    </div>
+	    <div class="right-half" ng-click="Facebook()">
+	      <p class = "footer-text">Share using Facebook  <i class = "ion-android-share-alt"></i></p>
+	    </div>
+	</div>
+</ion-view>

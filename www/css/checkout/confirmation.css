@@ -1,0 +1,173 @@
+/* Empty. Add your own CSS if you like */
+.confirmation{
+	/*background: url(../../img/background.jpg) 100% 100%;*/
+
+}
+.confirmation .card{
+background-color: transparent
+}
+.confirmation #backbutton {
+	height: 48px;
+    margin-top: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    position: absolute;
+}
+
+.confirmation .amount {
+	background-color: rgb(211,211,211);
+	border-radius: 5px;
+	text-align: center;
+	color: #444;
+	line-height: 40px;
+	font-weight: 600;
+	margin:10px 0 0;
+}
+
+.confirmation .amount .cus-price{
+	text-decoration:line-through
+}
+
+.confirmation .amount-payable{
+	background: #38b8bb;
+	color: #fff;
+	font-size: 14px;
+}
+.promo-code p{
+	line-height: 30px;
+}
+
+
+.confirmation .promo-code .col-offset-10 input[type='text']{
+	border: 1px solid rgb(204, 204, 204);
+	padding: 4px 10px;
+	height: 40px;
+}
+
+.confirmation .promo-code .col button{
+	height:40px;
+	min-height: auto;
+	line-height:40px;
+}
+
+.confirmation #walletPayable p {
+	line-height: 50px;
+	margin: 0px;
+	font-weight: 600;
+	font-size: 14px;
+}
+.confirmation #walletPayableAmount{
+	width: 80%;
+	margin: 5px auto;
+	/* height: 8%; */
+	border-radius: 0.5em;
+	margin: auto;
+	text-align: center;
+	color: #fff;
+	margin-top: 10px;
+}
+
+.confirmation .Div {
+	border-radius: 7px;	
+}
+
+.confirmation #walletMoney {
+	width: 70%; 
+	margin: 5px auto; 
+	background-color: rgb(211,211,211);
+	height: 12%;
+	border-radius: 0.5em;
+	font-weight: 50;
+	text-align: center;
+	padding-top: 10px;
+	color: #444;
+}
+
+.confirmation #amountToPay {
+	width: 70%; 
+	margin: 10px auto; 
+	background-color: #0DD1D1;
+	height: 12%;
+	border-radius: 0.5em;
+	font-weight: 50;
+	text-align: center;
+	padding-top: 10px;
+	color: white;
+}
+
+.confirmation #havePromo {
+	margin-bottom:5px;
+}
+.confirmation #havePromo .code-text p{
+	padding-top: 5px;
+}
+.confirmation #haveCode {
+    background-color: rgb(211,211,211);
+    width: 80%;
+    margin: 0 auto;
+    color: #444;
+    padding: 5px;
+    border-radius: 0.5em;
+}
+
+.confirmation #applyCode {
+	background-color: rgb(211,211,211);
+    width: 80%;
+    margin: -5px auto 0;
+    padding: 0px;
+    border-bottom-left-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
+}
+
+.confirmation #applyCodeDiv {
+	padding-left: 5px;
+}
+
+.confirmation #applyCodeButton {
+	margin-top: 5px;
+}
+
+.confirmation .custom-footer {
+	border-top-right-radius: 12px;
+	border-top-left-radius: 12px;
+	width: 97%;
+	margin-left: 6px;
+	margin-right: 12px;
+	text-align: center;
+	/*margin-left: 2%;*/
+	margin-right: 2%;
+	background-color: #FF8386 !important;
+}
+
+.confirmation #footerContent {
+	margin: 0 auto; 
+	padding-top: 5px; 
+	font-size: 15px;
+}
+
+.confirmation #image {
+	text-align: center;
+	width: 100%;
+}
+.confirmation #image img {
+	width:35%;
+	height: 20%;
+}
+
+.confirmation #walletCheckBox {
+	background: none;
+	color: #444;
+	font-weight: 50;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+}
+
+.item-checkbox p{
+	color: #020202;
+}
+
+.item-checkbox .checkbox-icon:before{
+	color:#676767;
+}

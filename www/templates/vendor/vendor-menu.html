@@ -1,0 +1,108 @@
+<ion-view id="vendor-services">
+    <ion-header-bar class="bar-light">
+        <div class="row">
+            <div class="col-10">
+        <a  class="" ng-click="backButton()"><img class="imgiconall" src="img/home/nleft.png"></a>
+            </div>
+            <div class="col-67 ellipsis">
+                <h1 class="title">{{vendor_detail.vendorName}}</h1>
+                </div>
+        <div class="col-20">
+            <div class="row cart-price">
+                <div class="col currency">&#x20B9;</div>
+                <div class="col price">{{total_customer}}</div>
+            </div>
+        </div>
+            </div>
+    </ion-header-bar>
+    <ion-content delegate-handle="mainScroll" ng-show="dataLoaded">
+        <div ng-show="menuInfo">
+            <div id="scroll-tabs" class="row">
+                <ion-scroll id="scrollTabs" direction="x" delegate-handle="myhandel">
+                    <div id="container">
+                        <div style="width:1800px;">
+                            <div class="tab"
+                                    ng-class="$index == 0 ? 'active':''"
+                                    ng-repeat="item in catName"
+                                    ng-click="tabHasChanged($index)">
+                                <img ng-if="item == 'FACE'" src="img/Face.png">
+                                <img ng-if="item == 'BODY'" src="img/Body-Care.png">
+                                <img ng-if="item == 'HAIR'" src="img/Hair.png">
+                                <img ng-if="item == 'HANDS & FEETS'" src="img/Hands-feet.png">
+                                <img ng-if="item == 'HAIR REMOVAL'" src="img/Waxing.png">
+                                <img ng-if="item == 'NAILS'" src="img/nail.png">
+                                <img ng-if="item == 'PACKAGES'" src="img/packege.png">
+                                <img ng-if="item == 'SPA & MASSAGES'" src="img/spa.png">
+                                <img ng-if="item == 'FITNESS'" src="img/fitness.png">
+                                <img ng-if="item == 'WEDDING & PARTY'" src="img/wedNparty.png">
+                                <img ng-if="item == 'TATTOO'" src="img/tatoo.png">
+                                <p>{{item}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </ion-scroll>
+                <div class="moreButton icon ion-chevron-right" ng-if="catName.length>3"
+                     ng-click="scrollToRight($event)"></div>
+            </div>
+            <div class="row padding" id="slideBox">
+                <ion-slide-box class="slideBox slide-box-view"
+                               on-slide-changed="slideHasChanged($index)"
+                               show-pager="false" delegate-handle="my-handle">
+                    <ion-slide ng-repeat="data in menu">
+                    <span ng-if="currSlide == $index">
+                    <div class="col" ng-repeat="(key, value) in data" style="width: 100%;margin:auto;">
+                        <div class="item item-text-wrap list-heading"
+                             ng-repeat="(key1, value1) in services"
+                             ng-if="key == key1">{{value1.serviceName}}</div>
+                        <div id="y.id " class="item item-text-wrap row" ng-class="selectedServices[y.menuItemId]?'selected-item':'normal'"
+                             id="custom-servicelist" ng-repeat="y in value"
+                             ng-click="selectItem($index, y.menuItemId,y)">
+                            <div class="col" ng-class="selectedServices[y.menuItemId]?'col-10 active-item':'hide'">
+                               <div class="active-color">&nbsp;</div>
+                            </div>
+                            <div class="col item-text-wrap p-15" ng-class="selectedServices[y.menuItemId]?'col-50':'normal col-60'">
+                                <span class="serviceList-gender"
+                                      ng-show="y.male == true && y.female==undefined && y.kids == undefined">
+                                    {{y.menuItemName}}&nbsp; <span>(Male)</span>
+                                </span>
+                                  <div class="serviceList-gender" ng-show="y.female == true && y.male == undefined && y.kids == undefined">
+                                    {{y.menuItemName}}&nbsp; <span>(Female) </span>
+                                </div>
+                                <span class="serviceList-gender" ng-show="y.female == true && y.male ==true && y.kids == undefined">
+                                    {{y.menuItemName}}&nbsp;<span>(Unisex)</span>
+                                </span>
+                                <span class="serviceList-gender" ng-show="y.female == undefined && y.male ==undefined && y.kids == true">
+                                    {{y.menuItemName}}&nbsp;<span>(Kids)</span>
+                                </span>
+                            </div>
+                            <div class="col col-40 p-15 price-view"
+                                 ng-if="y.vendorPrice != y.customerPrice">
+                                    <span class="striked-text serviceList-gender">&#x20B9;{{y.vendorPrice}} </span>
+                                    <span class="serviceList-gender">
+                                   &#x20B9; {{y.customerPrice}}
+                                    </span>
+                            </div>
+                            <div class="col col-33 p-15 price-view" ng-if="y.vendorPrice == y.customerPrice">
+                                <span class="serviceList-gender">
+                                   &#x20B9; {{y.customerPrice}}
+                                 </span>
+                            </div>
+                        </div>
+                     </div>
+                   </span>
+               </ion-slide>
+                </ion-slide-box>
+            </div>
+        </div>
+    </ion-content>
+    <ion-footer-bar class="footer">
+        <div class="cartValue" ng-click="proceedButton()">
+            <i class="icon ion-ios-cart"></i>
+            <p>{{cart_item}}</p>
+        </div>
+        <div class="row newFooter">
+            <div class="col col-33" id="overview" ng-click="overviewButton()">OVERVIEW</div>
+            <div class="col col-66" id="proceed" ng-click="proceedButton()">GO TO CART</div>
+        </div>
+    </ion-footer-bar>
+</ion-view>

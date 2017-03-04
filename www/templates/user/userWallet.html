@@ -1,0 +1,72 @@
+<ion-view class="userWallet">
+	<ion-header-bar class="bar-light"  align-title="center">
+        <a class="pdl5 button-clear" ng-click="go_home()"><img class="imgiconall" src="img/home/nleft.png"></a>
+        <h1 class="title">MY WALLET</h1>
+    </ion-header-bar>
+    <ion-content>
+    	<div class="card walletCard">
+    		<div class="walletImg">
+    			<img src="img/wallet.png">
+    		</div>
+    		<div class="walletBalance row">
+    			<div class="walletIcon col col-20">
+    				<i class="icon ion-laptop"></i>
+    			</div>
+    			<div class="col col-50">
+    				<p>WALLET BALANCE: </p>
+    			</div>
+    			<div class="col col-30">
+    				&#x20B9; {{amount}}
+    			</div>
+    		</div>
+    		<div class="walletDescription">
+    			<div class="history">
+    				WALLET HISTORY
+    			</div>
+    			<div class="row headings">
+    				<div class="col col-33">
+    					DESCRIPTION
+    				</div>
+					<div class="col col-33">
+						DATE
+					</div>
+    				<div class="col col-33">
+    					AMOUNT
+    				</div>
+    			</div>
+				<div class="row">
+    			  <ion-scroll class="scroll_view_wallet" direction="y" has-bouncing="false">
+                	<div class="row allTransactions" ng-repeat="transaction in walletHistory"
+						 ng-if="walletHistory.length>0">
+                    	<div class="col-33 detail">
+        					<p ng-show="transaction.bookingId">{{transaction.bookingId}}<p>
+        					<p ng-show="transaction.type == 'userJoined'">Registration<p>
+        					<p ng-show="transaction.type != 'userJoined'">{{transaction.type}}<p>
+        				</div>
+        				<div class="col-33 amount">
+							{{transaction.usedAt||transaction.creditDate | date:'dd-MM-yyyy'}}
+        				</div>
+						<div class="col-33 amount" ng-show="transaction.creditDate">
+        					&#x20B9; {{transaction.amount}} &nbsp;Cr
+        				</div>
+						<div class="col-33 amount" ng-show="transaction.usedAt">
+        					&#x20B9; {{transaction.amount}} &nbsp;Dr
+        				</div>
+                	</div>
+					<div class="row allTransactions" ng-if="walletHistory.length==0">
+						<div class="col detail text-center">
+							<p>{{msg}}</p>
+						</div>
+					</div>
+                  </ion-scroll>
+			    </div>
+    		</div>
+    		<div class="referNearn">
+    			<p>Refer More! Earn More</p>
+    		</div>
+    	</div>
+    </ion-content>
+    <ion-footer-bar class="walletFooter" align-title="center" ng-click="myReferral()">
+		<h1 class="title">REFER A FRIEND</h1>
+	</ion-footer-bar>
+</ion-view>

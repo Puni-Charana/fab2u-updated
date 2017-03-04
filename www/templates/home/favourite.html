@@ -1,0 +1,41 @@
+<ion-view class="vendorList">
+    <ion-header-bar class="bar-light">
+        <a href="" class="pdl5" ng-click="home()"><img class="imgiconall" src="img/home/nleft.png"></a>
+        <h1 class="title">Favourites</h1>
+    </ion-header-bar>
+    <ion-content>
+        <div ng-hide="vendorList">
+            <p class="text-center" style="margin-top: 60px;">
+                No,vendor found for your favourite list!
+            </p>
+        </div>
+        <div class="card m-5 fab_card" ng-show="vendorList.length !='0'" ng-repeat="vendor in vendorList">
+            <div class="row">
+                <div class="col-33 image_display_1" ng-click="vendor_menu(vendor.vendorId)">
+                    <img ng-src="{{vendor.vendorDetail.images.main.url || 'img/vendorImage.jpeg'}}" class="pkg-img">
+                </div>
+                <div id="part2" class="col-67">
+                    <div class="row">
+                        <div class="col-50">
+                            <p id="f_13">
+                                <i class="icon ion-ios-location c-location-icon" ng-click="open_map(vendor.vendorDetail.address.latitude,vendor.vendorDetail.address.longitude,vendor.vendorDetail.address.address1,vendor.vendorDetail.address.address2,vendor.vendorDetail.vendorName)">
+                                </i>
+                            </p>
+                            &nbsp;
+                        </div>
+                        <div class="col-50" ng-click="vendor_menu(vendor.vendorId)">
+                            <p id="vendor_type">{{vendor.vendorDetail.type }}</p>
+                        </div>
+                    </div>
+                    <div class="row" id="m_t" ng-click="vendor_menu(vendor.vendorId)">
+                        <div class="col">
+                            <p id="f_15">{{vendor.vendorDetail.vendorName}}</p>
+                            <p id="land_mark">{{vendor.vendorDetail.address.landmark}}</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </ion-content>
+</ion-view>
