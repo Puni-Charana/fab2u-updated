@@ -1,0 +1,62 @@
+{
+    "project_info": {
+        "project_number": "312123112357",
+        "firebase_url": "https://fab2u-d2cb8.firebaseio.com",
+        "project_id": "fab2u-d2cb8",
+        "storage_bucket": "fab2u-d2cb8.appspot.com"
+    },
+    "client": [{
+        "client_info": {
+            "mobilesdk_app_id": "1:312123112357:android:5ece602f2325001c",
+            "android_client_info": {
+                "package_name": "com.fab2u"
+            }
+        },
+        "oauth_client": [{
+            "client_id": "312123112357-r50rcuudi42ln5hb44dp251r952puil0.apps.googleusercontent.com",
+            "client_type": 3
+        }],
+        "api_key": [{
+            "current_key": "AIzaSyDNpdo7cbFOW7QPHDls0GJgx4ZcBcsJ7y8"
+        }],
+        "services": {
+            "analytics_service": {
+                "status": 1
+            },
+            "appinvite_service": {
+                "status": 1,
+                "other_platform_oauth_client": []
+            },
+            "ads_service": {
+                "status": 2
+            }
+        }
+    }, {
+        "client_info": {
+            "mobilesdk_app_id": "1:312123112357:android:e3d48f9115e68582",
+            "android_client_info": {
+                "package_name": "com.ionicframework.fab2u641617"
+            }
+        },
+        "oauth_client": [{
+            "client_id": "312123112357-r50rcuudi42ln5hb44dp251r952puil0.apps.googleusercontent.com",
+            "client_type": 3
+        }],
+        "api_key": [{
+            "current_key": "AIzaSyDNpdo7cbFOW7QPHDls0GJgx4ZcBcsJ7y8"
+        }],
+        "services": {
+            "analytics_service": {
+                "status": 1
+            },
+            "appinvite_service": {
+                "status": 1,
+                "other_platform_oauth_client": []
+            },
+            "ads_service": {
+                "status": 2
+            }
+        }
+    }],
+    "configuration_version": "1"
+}
