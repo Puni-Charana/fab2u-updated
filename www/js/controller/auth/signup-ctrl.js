@@ -172,6 +172,7 @@ app.controller("SignupCtrl", function($scope, signUpService, $http, $state, $cor
                     method: 'POST',
                     crossDomain: true
             }).success(function(response) {
+
                 if(response.toString().length == 4){
                     /////////////////       Store otp to firebase   /////////
                     var otpData = {
