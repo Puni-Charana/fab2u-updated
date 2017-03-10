@@ -168,23 +168,23 @@ app.controller("SignupCtrl", function($scope, signUpService, $http, $state, $cor
                 /////  do http request  to send otp to user //////////
 
             $http({
-                url: 'http://35.154.142.199/api/send-otp?otp='+$scope.generatedCode+'&mobile='+$scope.user.mobile_num,
+                url: 'http://35.154.142.199/api/send-otp?mobile='+$scope.user.mobile_num,
                     method: 'POST',
                     crossDomain: true
-            }).success(function(data, status, headers, config) {
-                if (status == 200 && data == 'success') {
+            }).success(function(response) {
+                if(response.toString().length == 4){
                     /////////////////       Store otp to firebase   /////////
                     var otpData = {
                         mobileNumber: $scope.user.mobile_num,
                         sendTime: new Date().getTime(),
-                        otp: $scope.generatedCode
+                        otp: response
                     }
                     var otpInfo = {};
                     otpInfo['otp/sendOtp/' + $scope.user.mobile_num] = otpData;
                     db.ref().update(otpInfo).then(function(response) {
                         console.log("otp stored in database.")
                     })
-                    storedOTP.push($scope.generatedCode);
+                    storedOTP.push(response);
                     window.localStorage['previousOtp'] = JSON.stringify(storedOTP);
                     $ionicLoading.hide();
                     $ionicPopup.alert({
@@ -193,10 +193,8 @@ app.controller("SignupCtrl", function($scope, signUpService, $http, $state, $cor
                     }).then(function() {
                         $scope.showOTPfield = true;
                         $ionicLoading.hide();
-                        $scope.verifyOtpByUser();
+                        $scope.verifyOtpByUser(response);
                     })
-                } else {
-                    reSendOtp()
                 }
             }).error(function(data, status, header, config) {
                 $ionicLoading.hide();
@@ -245,7 +243,7 @@ app.controller("SignupCtrl", function($scope, signUpService, $http, $state, $cor
         })
     }
 
-    $scope.verifyOtpByUser = function() {
+    $scope.verifyOtpByUser = function(response) {
         $scope.data = {};
         $ionicPopup.show({
             template: '<input type="tel" ng-model="data.otp">',
@@ -264,7 +262,7 @@ app.controller("SignupCtrl", function($scope, signUpService, $http, $state, $cor
                         //don't allow the user to close unless he enters otp
                         e.preventDefault();
                     } else {
-                        verifyOTP($scope.data.otp);
+                        verifyOTP($scope.data.otp, response);
                         // return $scope.data.otp;
                     }
                 }
@@ -279,21 +277,21 @@ app.controller("SignupCtrl", function($scope, signUpService, $http, $state, $cor
         console.log($scope.generatedCode)
         $http({
             method: 'POST',
-            url: 'http://35.154.142.199/api/re-send-otp?otp='+$scope.generatedCode+'&mobile='+$scope.user.mobile_num,
+            url: 'http://35.154.142.199/api/re-send-otp?mobile='+$scope.user.mobile_num,
             crossDomain: true
-        }).success(function(data, status, headers, config) {
-            if (status == 200 && data == 'success') {
+        }).success(function(response) {
+            if(response.toString().length == 4){
                 var otpInfo1 = {};
                 var otpData1 = {
                     mobileNumber: $scope.user.mobile_num,
                     sendTime: new Date().getTime(),
-                    otp: $scope.generatedCode
+                    otp: response
                 }
                 otpInfo1['otp/resendOtp/' + $scope.user.mobile_num] = otpData1;
                 db.ref().update(otpInfo1).then(function(response) {
                     console.log("otp stored in database:")
                 })
-                storedOTP.push($scope.generatedCode);
+                storedOTP.push(response);
                 window.localStorage['previousOtp'] = JSON.stringify(storedOTP);
                 $ionicLoading.hide();
                 $ionicPopup.alert({
@@ -302,10 +300,8 @@ app.controller("SignupCtrl", function($scope, signUpService, $http, $state, $cor
                 }).then(function() {
                     $scope.showOTPfield = true;
                     $ionicLoading.hide();
-                    $scope.verifyOtpByUser();
+                    $scope.verifyOtpByUser(response);
                 })
-            } else {
-                reSendOtp()
             }
         }).error(function(data, status, header, config) {
             $ionicLoading.hide();
@@ -320,13 +316,14 @@ app.controller("SignupCtrl", function($scope, signUpService, $http, $state, $cor
 
     }
 
-    function verifyOTP(verify_otp) {
+    function verifyOTP(verify_otp, response) {
         $ionicLoading.show();
         $scope.newOtp.code = verify_otp;
-        console.log($scope.newOtp.code);
-        console.log(storedOTP);
+        // console.log($scope.newOtp.code);
+        // console.log(storedOTP);
+        console.log(verify_otp, response);
         var verified = false;
-        if (_.contains(storedOTP, $scope.newOtp.code)) {
+        if (verify_otp == response) {
             console.log("if")
             verified = true;
             $ionicLoading.hide();
